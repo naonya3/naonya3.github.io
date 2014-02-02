@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Objective-C | naonya3.me]]></title>
+  <link href="http://naonya3.github.io/blog/categories/objective-c/atom.xml" rel="self"/>
+  <link href="http://naonya3.github.io/"/>
+  <updated>2014-02-03T01:15:13+09:00</updated>
+  <id>http://naonya3.github.io/</id>
+  <author>
+    <name><![CDATA[にょす(@naonya3)]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[AS3で言うEnterFrame的なの]]></title>
+    <link href="http://naonya3.github.io/blog/2013/06/13/cadisplaylink/"/>
+    <updated>2013-06-13T18:20:00+09:00</updated>
+    <id>http://naonya3.github.io/blog/2013/06/13/cadisplaylink</id>
+    <content type="html"><![CDATA[<p>Objective-Cでたまに使いたくなって、いつも忘れるのでメモ</p>
+
+<p>CADisplayLink使う方法</p>
+
+<p>QuartzCoreが必要</p>
+
+<p>```</p>
+
+<h1>import &lt;QuartzCore/QuartzCore.h></h1>
+
+<p>```</p>
+
+<p>で
+<code>
+_displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(_enterFrameHandler:)];
+[_displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
+</code></p>
+
+<p>これで</p>
+
+<p>```
+&ndash; (void)_enterFrameHandler:(CADisplayLink *)displayLink
+{</p>
+
+<pre><code>// 何らかの処理
+</code></pre>
+
+<p>}
+```</p>
+
+<p>でOK。メソッド名はもうちょっとObjC風にしてあげて。</p>
+
+<p>ポーズは</p>
+
+<p><code>
+_displayLink.paused = YES;
+</code></p>
+]]></content>
+  </entry>
+  
+</feed>

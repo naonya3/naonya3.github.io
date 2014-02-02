@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Device | naonya3.me]]></title>
+  <link href="http://naonya3.github.io/blog/categories/device/atom.xml" rel="self"/>
+  <link href="http://naonya3.github.io/"/>
+  <updated>2014-02-03T01:15:13+09:00</updated>
+  <id>http://naonya3.github.io/</id>
+  <author>
+    <name><![CDATA[にょす(@naonya3)]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[IRKit]]></title>
+    <link href="http://naonya3.github.io/blog/2014/01/05/irkit/"/>
+    <updated>2014-01-05T23:04:00+09:00</updated>
+    <id>http://naonya3.github.io/blog/2014/01/05/irkit</id>
+    <content type="html"><![CDATA[<p><img src="https://copy.com/thumbs_public/ZcK4LNj1hEy1/IMG_7214.JPG?revision=35&amp;size=512" alt="IRKit" /></p>
+
+<p>遠隔操作できる家電リモコン。</p>
+
+<p>お布団の中からリビングのエアコンを入れてみたり
+外出先からエアコンを入れてみたり</p>
+
+<p>・・・寒いので、エアコンネタばかり出てきてしまいましたが、、</p>
+
+<p>前職の先輩の<a href="https://twitter.com/maaash">mash</a>さんが、そういったことを手軽に行えるようにするデバイス「<a href="http://getirkit.com/">IRKit</a>」をなんと作り上げてしまったので、お試し版をお借りしました。</p>
+
+<p>まだお試し版ということで、専用アプリがリリースされていなかったりと通常より手順がむずいですが、正式リリース時にはすごく使いやすいデバイスになっていると思います。</p>
+
+<p>たぶんWifiが入っている家なら、IRKitを電源に差し、専用アプリからIRKitにアクセスするだけで使えちゃえます。</p>
+
+<p>ということで、設定して遊んでみました。</p>
+
+<h2>IRKitの初期設定</h2>
+
+<p>まずはIRKitをWifiに接続するためにアプリをインストールします。</p>
+
+<p>先ほど、専用アプリがリリースされていないと書きましたが、<a href="https://github.com/irkit/ios-sdk">github</a>にはソースコードがありますので、そちらをインストールして使います。</p>
+
+<p><code>Minimal</code>というプロジェクトが設定アプリ＋αです。</p>
+
+<p>ビルドにはCocoaPodで必要ライブラリをインストールする必要がありますが、正式版ではあまり関係のない話だと思いますので省略します。</p>
+
+<p>アプリを起動して、画面の指示にしたがって設定するだけです。</p>
+
+<p>と、言っても<strong>たったの3STEP</strong>です。</p>
+
+<ol>
+<li>MicroUSBでIRKitを電源に接続</li>
+<li>アプリに接続する無線LANの情報を入力する</li>
+<li><strong>モールス信号</strong>でIRKitに無線LANの設定情報を送る</li>
+</ol>
+
+
+<p><img src="https://copy.com/thumbs_public/Y4j7vxtPuE7o/IMG_7198.JPG?revision=36&amp;size=512" alt="モールス信号で無線の設定情報を送る" /></p>
+
+<p>右はモールス信号を送っている所です。遊び心があってすごい好きです。</p>
+
+<p>設定が完了すると、赤色だったSTATUSランプが青色になります。</p>
+
+<h2>IRKitでリモコンの信号を受信する</h2>
+
+<p><strong>IRKitに向けてリモコンを押すだけ</strong>です。</p>
+
+<p><img src="https://copy.com/thumbs_public/f1ddp3Yyl9Kr/IMG_7210.JPG?revision=37&amp;size=512" alt="押すだけ" /></p>
+
+<p>先ほどインストールした<code>Minimal</code>というアプリはリモコンの信号を学習する機能がついていますので、そちらを使えば受信したデータを簡易的に管理することができます。</p>
+
+<p>また、IRKit自身にHTTPサーバがあり、APIが動いていますので
+直接APIを叩いて<strong>直近のリモコンのデータを取得</strong>したり、<strong>取得したリデータをIRKitから赤外線で送信</strong>させたりする事もできます。</p>
+
+<p><a href="http://getirkit.com/">IRKit公式</a>サイトに書いてある情報のままですが、簡単にその方法を書きます</p>
+
+<h2>IRKitのAPIを叩いてリモコンデータを取得する</h2>
+
+<h3>まずはIRKitのIPアドレスを取得します</h3>
+
+<p><code>
+$ dns-sd -B _irkit._tcp
+</code>
+このまま打てばok。</p>
+
+<p><code>
+$ dns-sd -B _irkit._tcp
+Browsing for _irkit._tcp
+DATE: ---Sun 05 Jan 2014---
+19:52:09.254  ...STARTING...
+Timestamp     A/R Flags if Domain                    Service Type              Instance Name
+19:52:09.911  Add     2  4 local.                    _irkit._tcp.              irkitd303
+</code></p>
+
+<p><code>Instance Name</code>の所を見ます。私の環境だと<code>irkitd303</code>ですね。</p>
+
+<p>で、</p>
+
+<p><code>
+$ dns-sd -G v4 [Instance Name].local
+</code>
+です。</p>
+
+<p><code>
+$ dns-sd -G v4 irkitd303.local
+DATE: ---Sun 05 Jan 2014---
+19:52:55.967  ...STARTING...
+Timestamp     A/R Flags if Hostname                  Address                                      TTL
+19:52:56.606  Add     2  4 irkitd303.local.          192.168.11.9                                 10
+</code></p>
+
+<p><code>Address</code>が分かりました。</p>
+
+<h3>リモコンのデータを見る</h3>
+
+<p>IRKitが受信した直近のリモコンから送信された赤外線データを見るには<code>messages</code>APIをつかいます。</p>
+
+<p>```
+$ curl -i &ldquo;<a href="http://192.168.11.9/messages">http://192.168.11.9/messages</a>&rdquo;
+HTTP/1.0 200 OK
+Access-Control-Allow-Origin: *
+Server: IRKit/1.3.0.188.gbc9a662
+Content-Type: text/plain</p>
+
+<p>{&ldquo;format&rdquo;:&ldquo;raw&rdquo;,&ldquo;freq&rdquo;:38,&ldquo;data&rdquo;:[4713,1150,1150,1150,2368,1150,1150,1150,1150,1150,2368,1150,1150,1150,1150,1150,2368,1150,1150,1150,1150,1150,1150,1150,1150,50610,4713,1150,1150,1150,2368,1150,1150,1150,1150,1150,2368,1150,1150,1150,1150,1150,2368,1150,1150,1150,1150,1150,1150,1150,1150,50610,4713,1150,1150,1150,2368,1150,1150,1150,1150,1150,2368,1150,1150,1150,1150,1150,2368,1150,1150,1150,1150,1150,1150,1150,1150,52381,4713,1150,1150,1150,2368,1150,1150,1150,1150,1150,2368,1150,1150,1150,1150,1150,2368,1150,1150,1150,1150,1150,1150,1150,1150]}
+```
+JSONで直近のデータが返ってきました。Bodyが空だった場合、もう一度IRKitにリモコンを向けてボタンを押してください。
+STATUSランプが点滅すればOKです。</p>
+
+<p>ちなみのこのデータはテレビのボリュームアップ。</p>
+
+<h3>IRKitからデータを送信する</h3>
+
+<p>この受信データJSONを<code>messages</code>APIにPOSTすることで、同じ信号をIRKitから送信することができます。</p>
+
+<p><code>
+$ curl -i "http://192.168.11.9/messages" -d '{"format":"raw","freq":38,"data":[4713,1150,1150,1150,2368,1150,1150,1150,1150,1150,2368,1150,1150,1150,1150,1150,2368,1150,1150,1150,1150,1150,1150,1150,1150,50610,4713,1150,1150,1150,2368,1150,1150,1150,1150,1150,2368,1150,1150,1150,1150,1150,2368,1150,1150,1150,1150,1150,1150,1150,1150,50610,4713,1150,1150,1150,2368,1150,1150,1150,1150,1150,2368,1150,1150,1150,1150,1150,2368,1150,1150,1150,1150,1150,1150,1150,1150]}'
+HTTP/1.0 200 OK
+Access-Control-Allow-Origin: *
+Server: IRKit/1.3.0.188.gbc9a662
+Content-Type: text/plain
+</code></p>
+
+<p>IRKitのSTATUSランプが点灯し、テレビのボリュームが上がった。</p>
+
+<p><strong>楽しいｗ</strong></p>
+
+<h2>まとめ</h2>
+
+<p>Curlから家電操作するの楽しぃぃぃ！</p>
+
+<p>APIがシンプルですし、いろいろ組み合わせれば<strong><strong>ハイテクな家</strong></strong>が実現できそうです。</p>
+
+<p>今はまだ準備中みたいですけど、そのうち外出先から自宅にあるIRKitへアクセスする手段も用意されるみたいです。</p>
+
+<p>公式サイトの<code>IRKit Server HTTP API</code>がそうかな。</p>
+
+<p>もちろん今でも少し知識があれば外部からIRKitにアクセスすることは可能です。</p>
+
+<p>外出先から寒ぅい部屋のエアコンをつけたり消したりできて大変捗りそうでwktkですね！</p>
+
+<p>ちなみに僕はエアコンの電源をよく切り忘れて奥さんに怒られるので、「外出先からエアコンの電源を切れる」というだけで精神衛生上とても良い効果がありそう。</p>
+
+<hr />
+
+<p>ちなみにIRKitは簡単に蓋が開けられて、中はArduinoなので私はここに温度センサをつけて、ハイテクアクアリウムを構築する予定です。</p>
+
+<p><img src="https://copy.com/thumbs_public/wUTLjtZZMyVp/IMG_7205.JPG?revision=38&amp;size=512" alt="分解した" /></p>
+]]></content>
+  </entry>
+  
+</feed>

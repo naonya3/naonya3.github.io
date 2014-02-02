@@ -3,7 +3,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>naonya3.me</title>
+	<title>IRKit - naonya3.me</title>
 	<meta name="author" content="にょす(@naonya3)">
 
 	
@@ -74,18 +74,9 @@
 	
 		
 	
-	<div id="content" class="inner">
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2014/01/05/irkit/">
-		
-			IRKit</a>
-	</h2>
-	<div class="entry-content">
-		<p><img src="https://copy.com/thumbs_public/ZcK4LNj1hEy1/IMG_7214.JPG?revision=35&amp;size=512" alt="IRKit" /></p>
+	<div id="content" class="inner"><article class="post">
+	<h2 class="title">IRKit</h2>
+	<div class="entry-content"><p><img src="https://copy.com/thumbs_public/ZcK4LNj1hEy1/IMG_7214.JPG?revision=35&amp;size=512" alt="IRKit" /></p>
 
 <p>遠隔操作できる家電リモコン。</p>
 
@@ -256,10 +247,7 @@ STATUSランプが点滅すればOKです。</p>
 <p>ちなみにIRKitは簡単に蓋が開けられて、中はArduinoなので私はここに温度センサをつけて、ハイテクアクアリウムを構築する予定です。</p>
 
 <p><img src="https://copy.com/thumbs_public/wUTLjtZZMyVp/IMG_7205.JPG?revision=38&amp;size=512" alt="分解した" /></p>
-
-		
-		
-	</div>
+</div>
 
 
 <div class="meta">
@@ -287,321 +275,26 @@ STATUSランプが点滅すればOKです。</p>
 </div>
 </article>
 
-
-    <article class="post">
-	<h2 class="title">
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
 		
-		<a href="/blog/2013/06/13/cadisplaylink/">
 		
-			AS3で言うEnterFrame的なの</a>
-	</h2>
-	<div class="entry-content">
-		<p>Objective-Cでたまに使いたくなって、いつも忘れるのでメモ</p>
-
-<p>CADisplayLink使う方法</p>
-
-<p>QuartzCoreが必要</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>#import &lt;QuartzCore/QuartzCore.h&gt;</span></code></pre></td></tr></table></div></figure>
-
-
-<p>で</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>_displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(_enterFrameHandler:)];
-</span><span class='line'>[_displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];</span></code></pre></td></tr></table></div></figure>
-
-
-<p>これで</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>- (void)_enterFrameHandler:(CADisplayLink *)displayLink
-</span><span class='line'>{
-</span><span class='line'>    // 何らかの処理
-</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
-
-
-<p>でOK。メソッド名はもうちょっとObjC風にしてあげて。</p>
-
-<p>ポーズは</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>_displayLink.paused = YES;</span></code></pre></td></tr></table></div></figure>
-
-
-
-
+		<a class="addthis_button_tweet"></a>
+		
 		
 		
 	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-06-13T18:20:00+09:00" pubdate data-updated="true">Jun 13<span>th</span>, 2013</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/objective-c/'>Objective-C</a>
-
-
-</div>
 	
 </div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2013/05/25/strage-service-copy/">
-		
-			Copy.comを画像ストレージにする</a>
-	</h2>
-	<div class="entry-content">
-		<p>Qiitaや僕の大好きなMarkdownに画像を表示したい時、画像の置き場に困っていました。</p>
-
-<p>つまるところ、無料で使えていい具合のストレージサービスを探していた訳です。</p>
-
-<p>WEBに埋め込むのだから、直接画像に対して固有のURLが発行される事が条件です。
-また、後々画像を移動させることもあるかもしれないので、ローカルには画像を残しておきたい。</p>
-
-<p>そういう所だと、Dropboxの様にローカルのフォルダと同期出来るものが好ましかったのですがDropboxはあいにく個人的なファイルで容量が心許ないです。</p>
-
-<p>有料アカウントにしてもいいですが、やっぱり無料でできるならやりたい。</p>
-
-<p>そんな無料で大容量で画像に直リンクできちゃうストレージサービスどこかに無いかなー。</p>
-
-<p><strong>ありました！</strong></p>
-
-<p><a href="https://copy.com?r=elGQLg">Copy</a></p>
-
-<p>なんと始めから<strong>15GB</strong>の容量が付いてきます。もちろん無料。始めた事をShareするとさらに<strong>+2GB</strong>！</p>
-
-<p>しかも、しかも、この<a href="https://copy.com?r=elGQLg">招待リンク</a>から登録していただくとお互いに<strong>+5GB</strong>と<br/>
-<strong>お得でWin-Winな設定になっております。</strong></p>
-
-<p>まだ、対応サービスが少ないですが画像ストレージ的には困らないので
-初回登録の容量が大きいうちに登録してWin-Winしておく事をおすすめします（再掲</p>
-
-<p><strong>大事なURLなので、もう一度リンクを貼っておきますね。</strong></p>
-
-<p><a href="https://copy.com?r=elGQLg">Copy</a></p>
-
-<p>で、画像への直リンクの取得方法ですが、Copyのクライアントをインストールした方は
-対象ディレクトリ以下のファイルを右クリックで</p>
-
-<p><img src="https://copy.com/yKAkuLCQwNrmxP1G" alt="画像のURLの取得の仕方" /></p>
-
-<p>これだけでURLがコピーされます。というか、これだけで公開されちゃうので注意してください。</p>
-
-<p>ブラウザで直接アクセスするとリダイレクトされますが、<code>&lt;img&gt;</code>とかで指定する分には平気です。（2013.05.23現在</p>
-
-<p>15GBもあればしばらく画像置き場に困らないはずです^q^</p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
 
 
 
-
-
-
-
-
-  
-
-
-<time datetime="2013-05-25T14:22:00+09:00" pubdate data-updated="true">May 25<span>th</span>, 2013</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/webservice/'>webservice</a>
-
-
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
-	
+</section>
 </div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2013/05/24/stack-edit/">
-		
-			WEBアプリのMarkdownエディタStackEditが便利</a>
-	</h2>
-	<div class="entry-content">
-		<p>議事録やメモをとる時、Markdownで書くことが多いのですが、普段は<a href="http://mouapp.com/">Mou</a>や<a href="http://kobito.qiita.com/">Kobito</a>を使っています。(リアルタイムプレビューが必要なければなんだって書けるのですけど)</p>
-
-<p>ただ、いちいちアプリを立ち上げるのが面倒すぎて頭の毛が抜けかかっていた所に、いい感じのWEBアプリを教えて貰らいました。</p>
-
-<p><strong><a href="http://benweet.github.com/stackedit/">StackEdit</a></strong>です。</p>
-
-<p><img src="https://copy.com/eMLtOXvITikVThCq" alt="StackEditor" /></p>
-
-<p>リアルタイムプレビューはもちろん、Dropboxへ保存したり、読み込んだりもできちゃいます。</p>
-
-<p>Google Driveにも対応しているので、議事録をとったらそのままDriveにアップして共有！なんてこともできちゃいますね！</p>
-
-<p>Chromeアプリにもなっているので、<br/>
-みんな<a href="https://chrome.google.com/webstore/detail/stackedit/iiooodelglhkcpgbajoejffhijaclcdg">インストール</a>しちゃえばいいよ</p>
-
-<p>ちなみに<a href="https://github.com/benweet/stackedit">ソース</a>がGitHubで公開されているので、他のサービスと連携したかったら自分で追加できると思います。(たぶん</p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-05-24T01:42:00+09:00" pubdate data-updated="true">May 24<span>th</span>, 2013</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/tools/'>tools</a>
-
-
-</div>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2013/01/17/2013year/">
-		
-			2013年の抱負</a>
-	</h2>
-	<div class="entry-content">
-		<p>新年明けましておめでとうございます。<br/>
-せっかく何度目か分からないblogを立ち上げたので、今年の抱負を書いておきます。</p>
-
-<h2>結婚生活に慣れる</h2>
-
-<p>私事ですが、先月入籍致しました。</p>
-
-<p>もう６年も付き合い４年も一緒に暮らしていますが、結婚を機にお互いもっと相手を思いやれる行動が出来るようになりたいと思います。</p>
-
-<p>あと、僕はもっと稼げるようになりたいです。</p>
-
-<p>早く子供は欲しいと思っていて、子供がなにか好きな事をやりたい時、（甘やかすつもりはありませんが）お金の問題であきらめなきゃいけないなんて、
-本当につまらない事だとおもうので、がっつり稼ぎたいです。</p>
-
-<p>式は２月２４日を予定しております。Facebook/Twitter等で見かけたら、暖かく見守って頂けたらと幸いです。</p>
-
-<h2>個人サービスをリリース</h2>
-
-<p>インスタレーションやサイネージ、ツール的なアプリも作るの好きなのですが、
-やっぱり僕は”場”を作りたいと、最近改めて感じるようになりました。</p>
-
-<p>小学生の頃からwebページを作リ初めて（ホームページって呼んでましたね）何を一番最初にやったかって言うと、
-CGIの掲示板を開設することでした。その後チャットなども開設して、部活の友達やクラスの仲がいい奴と遅くまで話していました。</p>
-
-<p>たぶんそれがすごく楽しかったから、今でもweb制作続けているのだし、大学に入ってからですがサーバサイドの言語も勉強したのだと思います。
-アフィリエイトが流行りだした時期でそういう下心もあった事は否定しないけど！！</p>
-
-<p>という事で、本質に戻って今年は人が集まるサービス作りたいです。</p>
-
-<h2>iOSアプリもリリース</h2>
-
-<p>iPhoneでてすぐデベロッパー登録したにも関わらず、まだ個人で何もリリースしていません。</p>
-
-<p>このままでは死ねないので、しょぼくていいので何かリリースしたい。</p>
-
-<p>あわよくば有料で売って<a href="http://www.apple.com/jp/displays/">Thunderbolt Display</a>買える位稼ぎたい。</p>
-
-<p>これは別にサービスじゃ無くてもいいかな。</p>
-
-<h2>Rubyを扱えるようになる</h2>
-
-<p>上の<strong>個人サービスをリリース</strong>に関係するのですが、空き時間でサービスを作る上でスピード感は大切だと思うので、
-なんだか制作スピード上がりそうなRuby on Railsを使う為です。あと日本発の言語を日本のプログラマーが嗜んでなくてどうする。</p>
-
-<p><strong>あと、モテそうだからです。</strong></p>
-
-<h2>まとめ</h2>
-
-<p>とりあえず、まとめると</p>
-
-<p><strong>ぐだぐだ言ってないで、とっととつくる一年にします。</strong></p>
-
-<p>仕事では真面目に良いものつくってるので、個人では不完全でしょぼくても良いので、がんがん短いスパンで
-どんどんアウトプットして行きたい所存です！</p>
-
-<p>2013年、みなさまよろしくお願い致します。</p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-01-17T21:18:00+09:00" pubdate data-updated="true">Jan 17<span>th</span>, 2013</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/think/'>think</a>
-
-
-</div>
-	
-</div>
-</article>
-
-<nav id="pagenavi">
-    
-    
-    <div class="center"><a href="/blog/archives">Blog Archives</a></div>
-</nav></div>
 	<footer id="footer" class="inner">Copyright &copy; 2014
 
     にょす(@naonya3)
@@ -620,7 +313,10 @@ CGIの掲示板を開設することでした。その後チャットなども�
       var disqus_shortname = 'naonya3me';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://naonya3.github.io/blog/2014/01/05/irkit/';
+        var disqus_url = 'http://naonya3.github.io/blog/2014/01/05/irkit/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
