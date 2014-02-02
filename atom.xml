@@ -4,7 +4,7 @@
   <title><![CDATA[naonya3.me]]></title>
   <link href="http://naonya3.github.io/atom.xml" rel="self"/>
   <link href="http://naonya3.github.io/"/>
-  <updated>2014-02-03T01:15:13+09:00</updated>
+  <updated>2014-02-03T01:55:03+09:00</updated>
   <id>http://naonya3.github.io/</id>
   <author>
     <name><![CDATA[にょす(@naonya3)]]></name>
@@ -12,6 +12,112 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Unity入門記録 01]]></title>
+    <link href="http://naonya3.github.io/blog/2014/02/03/unity-practice01/"/>
+    <updated>2014-02-03T01:30:44+09:00</updated>
+    <id>http://naonya3.github.io/blog/2014/02/03/unity-practice01</id>
+    <content type="html"><![CDATA[<p>iPhoneプログラマーとして2年間Objective-Cを書いて、その前にFlashを2年。</p>
+
+<p>Unity4.3から2Dゲームも作りやすくなったということなので、趣味ではじめてみようかと。</p>
+
+<p>全く事前知識がないので、初心者の記録として晒しておきます。</p>
+
+<p>途中で飽きてやめたらごめんなさい。</p>
+
+<h2>ダウンロード</h2>
+
+<p>ここからダウンロード。</p>
+
+<p><a href="http://japan.unity3d.com/unity/download/">http://japan.unity3d.com/unity/download/</a></p>
+
+<p>ちなみに初心者なので無料版で十分（なはず）。</p>
+
+<p>iPhone/Androidにも無料で書き出せるようになったのは制作モチベーション上がる。</p>
+
+<h2>起動</h2>
+
+<p>サンプルと思われる、すごいゲーム出てきた。</p>
+
+<p><img src="https://copy.com/thumbs_public/6TU12KARC8ex/startup.png?revision=42&amp;size=512" alt="screenshot" /></p>
+
+<p>パネルたくさんファイルたくさんで、何したらいいか全くわからん。</p>
+
+<p>見た目で挫折しそう。</p>
+
+<h2>チュートリアルあった</h2>
+
+<p>本家にドキュメントとチュートリアルがあった。</p>
+
+<p><a href="http://japan.unity3d.com/developer/document/">http://japan.unity3d.com/developer/document/</a></p>
+
+<p>このチュートリアルをとりあえずやってみる。</p>
+
+<p><a href="http://japan.unity3d.com/developer/document/tutorial/my-first-unity/">http://japan.unity3d.com/developer/document/tutorial/my-first-unity/</a></p>
+
+<p>ブロック崩しが作れるらしい。</p>
+
+<h2>一応出来た</h2>
+
+<p><a href="http://naonya3.github.io/contents/unity/practice01/" target="_blank"><strong>Unity Web Playerが必要です。</strong></a></p>
+
+<h2>iPhone用に書き出す</h2>
+
+<p>せっかくなのでiPhoneで動作させたい。</p>
+
+<p>File > Build Settingからできる。</p>
+
+<p>あとはXcodeプロジェクトが作られるので、開いてビルドすればいいだけ。</p>
+
+<p>ココらへんはUnityというよりiPhone開発の話なので必要ならググるとわかる。</p>
+
+<p><strong>しかし、チュートリアルのままだとiPhone上でキー入力のInputがないので、ラケットの操作ができない。</strong></p>
+
+<p>多分マウス入力の値を見るようにすれば、タッチ座標に変換されるはずなので、</p>
+
+<p>チュートリアルのラケットに対応するスクリプトの</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>function Update () {
+</span><span class='line'>  rigidbody.AddForce(transform.right * Input.GetAxisRaw("Horizontal") * Accel, ForceMode.Impulse);
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>この<code>Horizontal</code>の部分を<code>Mouse X</code>に変更した。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>function Update () {
+</span><span class='line'>  rigidbody.AddForce(transform.right * Input.GetAxisRaw("Mouse X") * Accel, ForceMode.Impulse);
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p><code>Mouse X</code>という値はInput Manager(Edit > Project Settings > Input > inspectorパネル)をみるとわかる。</p>
+
+<p><img src="https://copy.com/thumbs_public/JOIaUGoJS4O1/screenshot.png?revision=41&amp;size=512" alt="screenshot" /></p>
+
+<p>こちらは、実機のスクリーンショットです。</p>
+
+<p>見切れてるし、微妙な操作感だけど簡単に動かすことができた。</p>
+
+<h2>今日のまとめ</h2>
+
+<p>Unityのインストール時間を除けばだいたい１時間あればここまで出来る。</p>
+
+<p>まずはプログラミング能力より、Unityというアプリケーションの操作に慣れる事と、何ができるのかを知る必要がありそう。</p>
+
+<p>ともあれ、Unity入門は簡単だったので時間あったらやってみると楽しいと思う。</p>
+
+<p>チュートリアルの次回分がなくなった(2014.2.2現在)
+ので、このあとは自分でブロック崩しを実装する必要がある。</p>
+
+<p>当たり判定の取り方がわかれば、多分すぐ出来るはず。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[IRKit]]></title>

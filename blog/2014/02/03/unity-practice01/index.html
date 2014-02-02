@@ -1,0 +1,271 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Unity入門記録 01 - naonya3.me</title>
+	<meta name="author" content="にょす(@naonya3)">
+
+	
+	<meta name="description" content="iPhoneプログラマーとして2年間Objective-Cを書いて、その前にFlashを2年。 Unity4.3から2Dゲームも作りやすくなったということなので、趣味ではじめてみようかと。 全く事前知識がないので、初心者の記録として晒しておきます。 途中で飽きてやめたらごめんなさい。 ダウンロード &hellip;">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="naonya3.me" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script async="true" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	
+</head>
+
+
+<body>
+	<header id="header" class="inner"><h1><a href="/">naonya3.me</a></h1>
+<nav id="main-nav"><ul class="main">
+	<li><a href="/">Blog</a></li>
+	<li><a href="/blog/archives">Archives</a></li>
+</ul>
+</nav>
+<nav id="mobile-nav">
+	<div class="alignleft menu">
+		<a class="button">Menu</a>
+		<div class="container"><ul class="main">
+	<li><a href="/">Blog</a></li>
+	<li><a href="/blog/archives">Archives</a></li>
+</ul>
+</div>
+	</div>
+	<div class="alignright search">
+		<a class="button"></a>
+		<div class="container">
+			<form action="http://google.com/search" method="get">
+				<input type="text" name="q" results="0">
+				<input type="hidden" name="q" value="site:naonya3.github.io">
+			</form>
+		</div>
+	</div>
+</nav>
+<nav id="sub-nav" class="alignright">
+	<div class="social">
+		
+		
+		
+		
+    
+		
+		
+		
+		
+		
+		<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
+    
+	</div>
+	<form class="search" action="http://google.com/search" method="get">
+		<input class="alignright" type="text" name="q" results="0">
+		<input type="hidden" name="q" value="site:naonya3.github.io">
+	</form>
+</nav>
+
+</header>
+	
+		
+	
+	<div id="content" class="inner"><article class="post">
+	<h2 class="title">Unity入門記録 01</h2>
+	<div class="entry-content"><p>iPhoneプログラマーとして2年間Objective-Cを書いて、その前にFlashを2年。</p>
+
+<p>Unity4.3から2Dゲームも作りやすくなったということなので、趣味ではじめてみようかと。</p>
+
+<p>全く事前知識がないので、初心者の記録として晒しておきます。</p>
+
+<p>途中で飽きてやめたらごめんなさい。</p>
+
+<h2>ダウンロード</h2>
+
+<p>ここからダウンロード。</p>
+
+<p><a href="http://japan.unity3d.com/unity/download/">http://japan.unity3d.com/unity/download/</a></p>
+
+<p>ちなみに初心者なので無料版で十分（なはず）。</p>
+
+<p>iPhone/Androidにも無料で書き出せるようになったのは制作モチベーション上がる。</p>
+
+<h2>起動</h2>
+
+<p>サンプルと思われる、すごいゲーム出てきた。</p>
+
+<p><img src="https://copy.com/thumbs_public/6TU12KARC8ex/startup.png?revision=42&amp;size=512" alt="screenshot" /></p>
+
+<p>パネルたくさんファイルたくさんで、何したらいいか全くわからん。</p>
+
+<p>見た目で挫折しそう。</p>
+
+<h2>チュートリアルあった</h2>
+
+<p>本家にドキュメントとチュートリアルがあった。</p>
+
+<p><a href="http://japan.unity3d.com/developer/document/">http://japan.unity3d.com/developer/document/</a></p>
+
+<p>このチュートリアルをとりあえずやってみる。</p>
+
+<p><a href="http://japan.unity3d.com/developer/document/tutorial/my-first-unity/">http://japan.unity3d.com/developer/document/tutorial/my-first-unity/</a></p>
+
+<p>ブロック崩しが作れるらしい。</p>
+
+<h2>一応出来た</h2>
+
+<p><a href="/contents/unity/practice01/" target="_blank"><strong>Unity Web Playerが必要です。</strong></a></p>
+
+<h2>iPhone用に書き出す</h2>
+
+<p>せっかくなのでiPhoneで動作させたい。</p>
+
+<p>File > Build Settingからできる。</p>
+
+<p>あとはXcodeプロジェクトが作られるので、開いてビルドすればいいだけ。</p>
+
+<p>ココらへんはUnityというよりiPhone開発の話なので必要ならググるとわかる。</p>
+
+<p><strong>しかし、チュートリアルのままだとiPhone上でキー入力のInputがないので、ラケットの操作ができない。</strong></p>
+
+<p>多分マウス入力の値を見るようにすれば、タッチ座標に変換されるはずなので、</p>
+
+<p>チュートリアルのラケットに対応するスクリプトの</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>function Update () {
+</span><span class='line'>  rigidbody.AddForce(transform.right * Input.GetAxisRaw("Horizontal") * Accel, ForceMode.Impulse);
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>この<code>Horizontal</code>の部分を<code>Mouse X</code>に変更した。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>function Update () {
+</span><span class='line'>  rigidbody.AddForce(transform.right * Input.GetAxisRaw("Mouse X") * Accel, ForceMode.Impulse);
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p><code>Mouse X</code>という値はInput Manager(Edit > Project Settings > Input > inspectorパネル)をみるとわかる。</p>
+
+<p><img src="https://copy.com/thumbs_public/JOIaUGoJS4O1/screenshot.png?revision=41&amp;size=512" alt="screenshot" /></p>
+
+<p>こちらは、実機のスクリーンショットです。</p>
+
+<p>見切れてるし、微妙な操作感だけど簡単に動かすことができた。</p>
+
+<h2>今日のまとめ</h2>
+
+<p>Unityのインストール時間を除けばだいたい１時間あればここまで出来る。</p>
+
+<p>まずはプログラミング能力より、Unityというアプリケーションの操作に慣れる事と、何ができるのかを知る必要がありそう。</p>
+
+<p>ともあれ、Unity入門は簡単だったので時間あったらやってみると楽しいと思う。</p>
+
+<p>チュートリアルの次回分がなくなった(2014.2.2現在)
+ので、このあとは自分でブロック崩しを実装する必要がある。</p>
+
+<p>当たり判定の取り方がわかれば、多分すぐ出来るはず。</p>
+</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-02-03T01:30:44+09:00" pubdate data-updated="true">Feb 3<span>rd</span>, 2014</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/unity/'>unity</a>
+
+
+</div>
+	
+</div>
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+		
+		
+		<a class="addthis_button_tweet"></a>
+		
+		
+		
+	</div>
+	
+</div>
+
+
+
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+</div>
+	<footer id="footer" class="inner">Copyright &copy; 2014
+
+    にょす(@naonya3)
+
+</footer>
+	<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'naonya3me';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://naonya3.github.io/blog/2014/02/03/unity-practice01/';
+        var disqus_url = 'http://naonya3.github.io/blog/2014/02/03/unity-practice01/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//go.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-41200352-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+
+
+</body>
+</html>
