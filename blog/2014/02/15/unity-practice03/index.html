@@ -1,0 +1,372 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Unity入門記録03 - naonya3.me</title>
+	<meta name="author" content="にょす(@naonya3)">
+
+	
+	<meta name="description" content="ブロック崩しを仕上げる 前回に引き続きブロック崩しを進める。
+今回はゲームクリアと、ゲームオーバーを実装する。 ゲームオーバーの実装 簡単そうなのでこちらから。 これは前回と同じように当たり判定OnCollisionEnterを使い、下のバーとの当たり判定を見ればいい。 &hellip;">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="naonya3.me" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script async="true" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	
+</head>
+
+
+<body>
+	<header id="header" class="inner"><h1><a href="/">naonya3.me</a></h1>
+<nav id="main-nav"><ul class="main">
+	<li><a href="/">Blog</a></li>
+	<li><a href="/blog/archives">Archives</a></li>
+</ul>
+</nav>
+<nav id="mobile-nav">
+	<div class="alignleft menu">
+		<a class="button">Menu</a>
+		<div class="container"><ul class="main">
+	<li><a href="/">Blog</a></li>
+	<li><a href="/blog/archives">Archives</a></li>
+</ul>
+</div>
+	</div>
+	<div class="alignright search">
+		<a class="button"></a>
+		<div class="container">
+			<form action="http://google.com/search" method="get">
+				<input type="text" name="q" results="0">
+				<input type="hidden" name="q" value="site:naonya3.github.io">
+			</form>
+		</div>
+	</div>
+</nav>
+<nav id="sub-nav" class="alignright">
+	<div class="social">
+		
+		
+		
+		
+    
+		
+		
+		
+		
+		
+		<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
+    
+	</div>
+	<form class="search" action="http://google.com/search" method="get">
+		<input class="alignright" type="text" name="q" results="0">
+		<input type="hidden" name="q" value="site:naonya3.github.io">
+	</form>
+</nav>
+
+</header>
+	
+		
+	
+	<div id="content" class="inner"><article class="post">
+	<h2 class="title">Unity入門記録03</h2>
+	<div class="entry-content"><h2>ブロック崩しを仕上げる</h2>
+
+<p>前回に引き続きブロック崩しを進める。
+今回はゲームクリアと、ゲームオーバーを実装する。</p>
+
+<h2>ゲームオーバーの実装</h2>
+
+<p>簡単そうなのでこちらから。</p>
+
+<p>これは前回と同じように当たり判定<code>OnCollisionEnter</code>を使い、下のバーとの当たり判定を見ればいい。</p>
+
+<p>下のバーのGameObjectを取得できればほぼ終わり。</p>
+
+<p>GameObjectを取得する方法でとりあえず知っているのは<code>Find</code>を使う方法だけなので、Hierarchyパネルで下のバーに一意な名前をつけて取得しやすくする。</p>
+
+<p><code>BottomBar</code>という名前をつけた。</p>
+
+<p><img src="https://copy.com/thumbs_public/pd7IZyLqN9dK/BottomBar.png?revision=45&amp;size=512" alt="BottomBar" /></p>
+
+<p>ゲームオーバー画面は後で作るとして、ひとまず「ボールを消す」ということでゲームオーバーを表現した。</p>
+
+<p>コードはこんな感じで、BallController内に実装した。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>function OnCollisionEnter(col:Collision) {
+</span><span class='line'>    var blocks = GameObject.Find("Blocks");
+</span><span class='line'>    if (col.transform.IsChildOf(blocks.transform)) {
+</span><span class='line'>      Destroy(col.gameObject);
+</span><span class='line'>    }
+</span><span class='line'>    
+</span><span class='line'>    var bottomBar = GameObject.Find("BottomBar");
+</span><span class='line'>    if (col.gameObject == bottomBar) {
+</span><span class='line'>      Debug.Log("Game Over");
+</span><span class='line'>      Destroy(this.gameObject);
+</span><span class='line'>    }
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>BallControllerにゲームオーバー処理などを書いていくのは、プログラムの規模が大きくなると良くないことが起きるのは容易に想像できるが、今回は気にしないでおく。</p>
+
+<h2>ゲームクリアの実装</h2>
+
+<p>ブロック崩しは、ブロックがなくなったらクリアだ。</p>
+
+<p>すべてのブロックは<code>Blocks</code>の子にしてあるので、<code>Blocks</code>の子が<code>0</code>になったらクリアでいいだろう。</p>
+
+<p>子の数え方がわからないので調べる。</p>
+
+<p>前回の経験上、子関係のものは<code>Transform</code>にありそうなので、ドキュメントの<code>Transform</code>の項を眺めてたらベストなプロパティがあった。</p>
+
+<p><a href="https://docs.unity3d.com/Documentation/ScriptReference/Transform-childCount.html">Transform.childCount</a></p>
+
+<p>これでできそうだ。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>function OnCollisionEnter(col:Collision) {
+</span><span class='line'>    var blocks = GameObject.Find("Blocks");
+</span><span class='line'>    if (col.transform.IsChildOf(blocks.transform)) {
+</span><span class='line'>      Destroy(col.gameObject);
+</span><span class='line'>      
+</span><span class='line'>      // Check Count of Balls.
+</span><span class='line'>      if (blocks.transform.childCount == 0) {
+</span><span class='line'>          Debug.Log("Clear!!");
+</span><span class='line'>          Destroy(this.gameObject);   
+</span><span class='line'>      }
+</span><span class='line'>    }
+</span><span class='line'>    
+</span><span class='line'>    var bottomBar = GameObject.Find("BottomBar");
+</span><span class='line'>    if (col.gameObject == bottomBar) {
+</span><span class='line'>      Debug.Log("Game Over");
+</span><span class='line'>      Destroy(this.gameObject);
+</span><span class='line'>    }
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>ブロックとの当たり判定の中で残りのブロック数をチェックして<code>0</code>ならクリアだ。</p>
+
+<p>先ほどと同様に、ボールを消すことでクリアとした。</p>
+
+<p><strong>だが、これではダメだった。</strong></p>
+
+<p><code>Destroy()</code>の直後はまだ実際にオブジェクトは削除されていないようで、カウントが減らなかった。</p>
+
+<p>ドキュメントを読んでみるとしっかりと書いてあった。</p>
+
+<p><a href="https://docs.unity3d.com/Documentation/ScriptReference/Object.Destroy.html">Object.Destroy</a></p>
+
+<blockquote><p>Actual object destruction is always delayed until after the current Update loop</p></blockquote>
+
+<p>ということ毎ループ、ブロックの残りの数を数えることにした。</p>
+
+<p>ブロック崩し位なら対して影響なさそうだが、本当はあまり無駄な処理を毎ループ行うべきではない。</p>
+
+<p>毎ループ処理をしたいときは、<code>Update()</code>の中に処理を書けば良い。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#pragma strict
+</span><span class='line'>
+</span><span class='line'>var speed = 5;
+</span><span class='line'>
+</span><span class='line'>function Start () {
+</span><span class='line'>  rigidbody.AddForce((transform.forward + transform.right) * speed, ForceMode.VelocityChange);
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>function Update () {
+</span><span class='line'>  var blocks = GameObject.Find("Blocks");
+</span><span class='line'>  
+</span><span class='line'>  // Check count of remaining blocks.
+</span><span class='line'>  if (blocks.transform.childCount == 0) {
+</span><span class='line'>          Debug.Log("Clear!!");
+</span><span class='line'>          Destroy(this.gameObject);   
+</span><span class='line'>    }
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>function OnCollisionEnter(col:Collision) {
+</span><span class='line'>    var blocks = GameObject.Find("Blocks");
+</span><span class='line'>    if (col.transform.IsChildOf(blocks.transform)) {
+</span><span class='line'>      Destroy(col.gameObject);
+</span><span class='line'>    }
+</span><span class='line'>    
+</span><span class='line'>    var bottomBar = GameObject.Find("BottomBar");
+</span><span class='line'>    if (col.gameObject == bottomBar) {
+</span><span class='line'>      Debug.Log("Game Over");
+</span><span class='line'>      Destroy(this.gameObject);
+</span><span class='line'>    }
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>とりあえず遊べる感じになった</h2>
+
+<p><a href="/contents/unity/practice03/">Unity WebPlayerが必要です</a></p>
+
+<h2>まとめ</h2>
+
+<p>少しわかってきたので、ドキュメントを眺めるようにしよう。</p>
+
+<p>次回は、シーン遷移をやってみたいので、シーン遷移させてゲームクリアの画面を表示させるようにする。</p>
+
+<p>ソースコードは<a href="https://github.com/naonya3/Unity-Breakout">github</a></p>
+
+<p>tagは<code>practice03</code>です。</p>
+</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-02-15T22:03:29+09:00" pubdate data-updated="true">Feb 15<span>th</span>, 2014</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/unity/'>unity</a>
+
+
+</div>
+	
+</div>
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+		
+		
+		<a class="addthis_button_tweet"></a>
+		
+		
+		
+	</div>
+	
+</div>
+
+
+
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+</div>
+	<footer id="footer" class="inner">Copyright &copy; 2014
+
+    にょす(@naonya3)
+
+</footer>
+	<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'naonya3me';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://naonya3.github.io/blog/2014/02/15/unity-practice03/';
+        var disqus_url = 'http://naonya3.github.io/blog/2014/02/15/unity-practice03/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//go.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-41200352-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+
+
+</body>
+</html>

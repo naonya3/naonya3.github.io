@@ -4,7 +4,7 @@
   <title><![CDATA[Category: unity | naonya3.me]]></title>
   <link href="http://naonya3.github.io/blog/categories/unity/atom.xml" rel="self"/>
   <link href="http://naonya3.github.io/"/>
-  <updated>2014-02-15T04:42:34+09:00</updated>
+  <updated>2014-02-15T22:06:09+09:00</updated>
   <id>http://naonya3.github.io/</id>
   <author>
     <name><![CDATA[にょす(@naonya3)]]></name>
@@ -12,6 +12,171 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Unity入門記録03]]></title>
+    <link href="http://naonya3.github.io/blog/2014/02/15/unity-practice03/"/>
+    <updated>2014-02-15T22:03:29+09:00</updated>
+    <id>http://naonya3.github.io/blog/2014/02/15/unity-practice03</id>
+    <content type="html"><![CDATA[<h2>ブロック崩しを仕上げる</h2>
+
+<p>前回に引き続きブロック崩しを進める。
+今回はゲームクリアと、ゲームオーバーを実装する。</p>
+
+<h2>ゲームオーバーの実装</h2>
+
+<p>簡単そうなのでこちらから。</p>
+
+<p>これは前回と同じように当たり判定<code>OnCollisionEnter</code>を使い、下のバーとの当たり判定を見ればいい。</p>
+
+<p>下のバーのGameObjectを取得できればほぼ終わり。</p>
+
+<p>GameObjectを取得する方法でとりあえず知っているのは<code>Find</code>を使う方法だけなので、Hierarchyパネルで下のバーに一意な名前をつけて取得しやすくする。</p>
+
+<p><code>BottomBar</code>という名前をつけた。</p>
+
+<p><img src="https://copy.com/thumbs_public/pd7IZyLqN9dK/BottomBar.png?revision=45&amp;size=512" alt="BottomBar" /></p>
+
+<p>ゲームオーバー画面は後で作るとして、ひとまず「ボールを消す」ということでゲームオーバーを表現した。</p>
+
+<p>コードはこんな感じで、BallController内に実装した。</p>
+
+<p>```
+function OnCollisionEnter(col:Collision) {</p>
+
+<pre><code>var blocks = GameObject.Find("Blocks");
+if (col.transform.IsChildOf(blocks.transform)) {
+    Destroy(col.gameObject);
+}
+
+var bottomBar = GameObject.Find("BottomBar");
+if (col.gameObject == bottomBar) {
+    Debug.Log("Game Over");
+    Destroy(this.gameObject);
+}
+</code></pre>
+
+<p>}
+```</p>
+
+<p>BallControllerにゲームオーバー処理などを書いていくのは、プログラムの規模が大きくなると良くないことが起きるのは容易に想像できるが、今回は気にしないでおく。</p>
+
+<h2>ゲームクリアの実装</h2>
+
+<p>ブロック崩しは、ブロックがなくなったらクリアだ。</p>
+
+<p>すべてのブロックは<code>Blocks</code>の子にしてあるので、<code>Blocks</code>の子が<code>0</code>になったらクリアでいいだろう。</p>
+
+<p>子の数え方がわからないので調べる。</p>
+
+<p>前回の経験上、子関係のものは<code>Transform</code>にありそうなので、ドキュメントの<code>Transform</code>の項を眺めてたらベストなプロパティがあった。</p>
+
+<p><a href="https://docs.unity3d.com/Documentation/ScriptReference/Transform-childCount.html">Transform.childCount</a></p>
+
+<p>これでできそうだ。</p>
+
+<p>```
+function OnCollisionEnter(col:Collision) {</p>
+
+<pre><code>var blocks = GameObject.Find("Blocks");
+if (col.transform.IsChildOf(blocks.transform)) {
+    Destroy(col.gameObject);
+
+    // Check Count of Balls.
+    if (blocks.transform.childCount == 0) {
+        Debug.Log("Clear!!");
+        Destroy(this.gameObject);   
+    }
+}
+
+var bottomBar = GameObject.Find("BottomBar");
+if (col.gameObject == bottomBar) {
+    Debug.Log("Game Over");
+    Destroy(this.gameObject);
+}
+</code></pre>
+
+<p>}
+```</p>
+
+<p>ブロックとの当たり判定の中で残りのブロック数をチェックして<code>0</code>ならクリアだ。</p>
+
+<p>先ほどと同様に、ボールを消すことでクリアとした。</p>
+
+<p><strong>だが、これではダメだった。</strong></p>
+
+<p><code>Destroy()</code>の直後はまだ実際にオブジェクトは削除されていないようで、カウントが減らなかった。</p>
+
+<p>ドキュメントを読んでみるとしっかりと書いてあった。</p>
+
+<p><a href="https://docs.unity3d.com/Documentation/ScriptReference/Object.Destroy.html">Object.Destroy</a></p>
+
+<blockquote><p>Actual object destruction is always delayed until after the current Update loop</p></blockquote>
+
+<p>ということ毎ループ、ブロックの残りの数を数えることにした。</p>
+
+<p>ブロック崩し位なら対して影響なさそうだが、本当はあまり無駄な処理を毎ループ行うべきではない。</p>
+
+<p>毎ループ処理をしたいときは、<code>Update()</code>の中に処理を書けば良い。</p>
+
+<p>```</p>
+
+<h1>pragma strict</h1>
+
+<p>var speed = 5;</p>
+
+<p>function Start () {</p>
+
+<pre><code>rigidbody.AddForce((transform.forward + transform.right) * speed, ForceMode.VelocityChange);
+</code></pre>
+
+<p>}</p>
+
+<p>function Update () {</p>
+
+<pre><code>var blocks = GameObject.Find("Blocks");
+
+// Check count of remaining blocks.
+if (blocks.transform.childCount == 0) {
+        Debug.Log("Clear!!");
+        Destroy(this.gameObject);   
+}
+</code></pre>
+
+<p>}</p>
+
+<p>function OnCollisionEnter(col:Collision) {</p>
+
+<pre><code>var blocks = GameObject.Find("Blocks");
+if (col.transform.IsChildOf(blocks.transform)) {
+    Destroy(col.gameObject);
+}
+
+var bottomBar = GameObject.Find("BottomBar");
+if (col.gameObject == bottomBar) {
+    Debug.Log("Game Over");
+    Destroy(this.gameObject);
+}
+</code></pre>
+
+<p>}
+```</p>
+
+<h2>とりあえず遊べる感じになった</h2>
+
+<p><a href="/contents/unity/practice03/">Unity WebPlayerが必要です</a></p>
+
+<h2>まとめ</h2>
+
+<p>少しわかってきたので、ドキュメントを眺めるようにしよう。</p>
+
+<p>次回は、シーン遷移をやってみたいので、シーン遷移させてゲームクリアの画面を表示させるようにする。</p>
+
+<p>ソースコードは<a href="https://github.com/naonya3/Unity-Breakout">github</a></p>
+
+<p>tagは<code>practice03</code>です。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Unity入門記録 02]]></title>
@@ -38,9 +203,9 @@
 
 <p>これだけで、ボールはブロックに跳ねるようになります。</p>
 
-<p>各ブロックは、Enpty Objectを作ってそこに入れていくと管理しやすいでしょう。</p>
+<p>各ブロックは、Empty Objectを作ってそこに入れていくと管理しやすいでしょう。</p>
 
-<p>Enpty Objectはフォルダみたいなものでしょうか。AfterEffectやっている人はNullObjectの概念が非常に近い感じです。</p>
+<p>Empty Objectはフォルダみたいなものでしょうか。AfterEffectやっている人はNullObjectの概念が非常に近い感じです。</p>
 
 <p>AS3やObjective-C、JS（DOM）だとそれぞれSprite, UIView, divみたいなものを意識するといいかもしれません。</p>
 
@@ -211,7 +376,7 @@ if (col.transform.IsChildOf(blocks.transform)) {
 <h2>今回のまとめと所感</h2>
 
 <ul>
-<li>GemeObjectの取得は重要そうだ</li>
+<li>GameObjectの取得は重要そうだ</li>
 <li>Ballが他のObjectを操作するのはイケてない感じがする</li>
 <li>プログラミング作法的な話は後でいいや</li>
 <li>JSで書いてるっぽいけど、他の言語使えたよね？？？</li>
