@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: tools | naonya3.me]]></title>
-  <link href="http://naonya3.github.io/blog/categories/tools/atom.xml" rel="self"/>
-  <link href="http://naonya3.github.io/"/>
-  <updated>2014-02-15T22:06:09+09:00</updated>
-  <id>http://naonya3.github.io/</id>
+  <link href="http://naonya3.me/blog/categories/tools/atom.xml" rel="self"/>
+  <link href="http://naonya3.me/"/>
+  <updated>2014-07-14T17:30:19+09:00</updated>
+  <id>http://naonya3.me/</id>
   <author>
     <name><![CDATA[にょす(@naonya3)]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[WEBアプリのMarkdownエディタStackEditが便利]]></title>
-    <link href="http://naonya3.github.io/blog/2013/05/24/stack-edit/"/>
+    <link href="http://naonya3.me/blog/2013/05/24/stack-edit/"/>
     <updated>2013-05-24T01:42:00+09:00</updated>
-    <id>http://naonya3.github.io/blog/2013/05/24/stack-edit</id>
+    <id>http://naonya3.me/blog/2013/05/24/stack-edit</id>
     <content type="html"><![CDATA[<p>議事録やメモをとる時、Markdownで書くことが多いのですが、普段は<a href="http://mouapp.com/">Mou</a>や<a href="http://kobito.qiita.com/">Kobito</a>を使っています。(リアルタイムプレビューが必要なければなんだって書けるのですけど)</p>
 
 <p>ただ、いちいちアプリを立ち上げるのが面倒すぎて頭の毛が抜けかかっていた所に、いい感じのWEBアプリを教えて貰らいました。</p>

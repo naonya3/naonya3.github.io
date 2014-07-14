@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: webservice | naonya3.me]]></title>
-  <link href="http://naonya3.github.io/blog/categories/webservice/atom.xml" rel="self"/>
-  <link href="http://naonya3.github.io/"/>
-  <updated>2014-02-15T22:06:09+09:00</updated>
-  <id>http://naonya3.github.io/</id>
+  <link href="http://naonya3.me/blog/categories/webservice/atom.xml" rel="self"/>
+  <link href="http://naonya3.me/"/>
+  <updated>2014-07-14T17:30:19+09:00</updated>
+  <id>http://naonya3.me/</id>
   <author>
     <name><![CDATA[にょす(@naonya3)]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Copy.comを画像ストレージにする]]></title>
-    <link href="http://naonya3.github.io/blog/2013/05/25/strage-service-copy/"/>
+    <link href="http://naonya3.me/blog/2013/05/25/strage-service-copy/"/>
     <updated>2013-05-25T14:22:00+09:00</updated>
-    <id>http://naonya3.github.io/blog/2013/05/25/strage-service-copy</id>
+    <id>http://naonya3.me/blog/2013/05/25/strage-service-copy</id>
     <content type="html"><![CDATA[<p>Qiitaや僕の大好きなMarkdownに画像を表示したい時、画像の置き場に困っていました。</p>
 
 <p>つまるところ、無料で使えていい具合のストレージサービスを探していた訳です。</p>

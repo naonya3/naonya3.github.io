@@ -1,47 +1,51 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
-        <loc>http://naonya3.github.io/blog/2013/01/17/2013year/</loc>
-        <lastmod>2014-02-03T01:00:27+09:00</lastmod>
+        <loc>http://naonya3.me/blog/2013/01/17/2013year/</loc>
+        <lastmod>2014-07-14T17:02:02+09:00</lastmod>
     </url>
     <url>
-        <loc>http://naonya3.github.io/blog/2013/05/24/stack-edit/</loc>
-        <lastmod>2014-02-03T01:00:27+09:00</lastmod>
+        <loc>http://naonya3.me/blog/2013/05/24/stack-edit/</loc>
+        <lastmod>2014-07-14T17:02:02+09:00</lastmod>
     </url>
     <url>
-        <loc>http://naonya3.github.io/blog/2013/05/25/strage-service-copy/</loc>
-        <lastmod>2014-02-03T01:00:27+09:00</lastmod>
+        <loc>http://naonya3.me/blog/2013/05/25/strage-service-copy/</loc>
+        <lastmod>2014-07-14T17:02:02+09:00</lastmod>
     </url>
     <url>
-        <loc>http://naonya3.github.io/blog/2013/06/13/cadisplaylink/</loc>
-        <lastmod>2014-02-03T01:00:27+09:00</lastmod>
+        <loc>http://naonya3.me/blog/2013/06/13/cadisplaylink/</loc>
+        <lastmod>2014-07-14T17:02:02+09:00</lastmod>
     </url>
     <url>
-        <loc>http://naonya3.github.io/blog/2014/01/05/irkit/</loc>
-        <lastmod>2014-02-03T01:00:27+09:00</lastmod>
+        <loc>http://naonya3.me/blog/2014/01/05/irkit/</loc>
+        <lastmod>2014-07-14T17:02:02+09:00</lastmod>
     </url>
     <url>
-        <loc>http://naonya3.github.io/blog/2014/02/03/unity-practice01/</loc>
-        <lastmod>2014-02-03T02:57:00+09:00</lastmod>
+        <loc>http://naonya3.me/blog/2014/02/03/unity-practice01/</loc>
+        <lastmod>2014-07-14T17:02:02+09:00</lastmod>
     </url>
     <url>
-        <loc>http://naonya3.github.io/blog/2014/02/15/unity-practice02/</loc>
-        <lastmod>2014-02-15T22:05:52+09:00</lastmod>
+        <loc>http://naonya3.me/blog/2014/02/15/unity-practice02/</loc>
+        <lastmod>2014-07-14T17:02:02+09:00</lastmod>
     </url>
     <url>
-        <loc>http://naonya3.github.io/blog/2014/02/15/unity-practice03/</loc>
-        <lastmod>2014-02-15T22:04:11+09:00</lastmod>
+        <loc>http://naonya3.me/blog/2014/02/15/unity-practice03/</loc>
+        <lastmod>2014-07-14T17:02:02+09:00</lastmod>
     </url>
     <url>
-        <loc>http://naonya3.github.io/blog/archives/</loc>
-        <lastmod>2014-02-15T22:05:52+09:00</lastmod>
+        <loc>http://naonya3.me/blog/2014/07/14/romo/</loc>
+        <lastmod>2014-07-14T17:15:23+09:00</lastmod>
     </url>
     <url>
-        <loc>http://naonya3.github.io/</loc>
-        <lastmod>2014-02-15T22:05:52+09:00</lastmod>
+        <loc>http://naonya3.me/blog/archives/</loc>
+        <lastmod>2014-07-14T17:15:23+09:00</lastmod>
     </url>
     <url>
-        <loc>http://naonya3.github.io/robots.txt</loc>
-        <lastmod>2014-02-02T23:52:35+09:00</lastmod>
+        <loc>http://naonya3.me/</loc>
+        <lastmod>2014-07-14T17:15:23+09:00</lastmod>
+    </url>
+    <url>
+        <loc>http://naonya3.me/robots.txt</loc>
+        <lastmod>2014-07-14T17:02:02+09:00</lastmod>
     </url>
 </urlset>

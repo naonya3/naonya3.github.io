@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: IRKit | naonya3.me]]></title>
-  <link href="http://naonya3.github.io/blog/categories/irkit/atom.xml" rel="self"/>
-  <link href="http://naonya3.github.io/"/>
-  <updated>2014-02-15T22:06:09+09:00</updated>
-  <id>http://naonya3.github.io/</id>
+  <link href="http://naonya3.me/blog/categories/irkit/atom.xml" rel="self"/>
+  <link href="http://naonya3.me/"/>
+  <updated>2014-07-14T17:30:19+09:00</updated>
+  <id>http://naonya3.me/</id>
   <author>
     <name><![CDATA[にょす(@naonya3)]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[IRKit]]></title>
-    <link href="http://naonya3.github.io/blog/2014/01/05/irkit/"/>
+    <link href="http://naonya3.me/blog/2014/01/05/irkit/"/>
     <updated>2014-01-05T23:04:00+09:00</updated>
-    <id>http://naonya3.github.io/blog/2014/01/05/irkit</id>
+    <id>http://naonya3.me/blog/2014/01/05/irkit</id>
     <content type="html"><![CDATA[<p><img src="https://copy.com/thumbs_public/ZcK4LNj1hEy1/IMG_7214.JPG?revision=35&amp;size=512" alt="IRKit" /></p>
 
 <p>遠隔操作できる家電リモコン。</p>

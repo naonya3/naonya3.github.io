@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: unity | naonya3.me]]></title>
-  <link href="http://naonya3.github.io/blog/categories/unity/atom.xml" rel="self"/>
-  <link href="http://naonya3.github.io/"/>
-  <updated>2014-02-15T22:06:09+09:00</updated>
-  <id>http://naonya3.github.io/</id>
+  <link href="http://naonya3.me/blog/categories/unity/atom.xml" rel="self"/>
+  <link href="http://naonya3.me/"/>
+  <updated>2014-07-14T17:30:19+09:00</updated>
+  <id>http://naonya3.me/</id>
   <author>
     <name><![CDATA[にょす(@naonya3)]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Unity入門記録03]]></title>
-    <link href="http://naonya3.github.io/blog/2014/02/15/unity-practice03/"/>
+    <link href="http://naonya3.me/blog/2014/02/15/unity-practice03/"/>
     <updated>2014-02-15T22:03:29+09:00</updated>
-    <id>http://naonya3.github.io/blog/2014/02/15/unity-practice03</id>
+    <id>http://naonya3.me/blog/2014/02/15/unity-practice03</id>
     <content type="html"><![CDATA[<h2>ブロック崩しを仕上げる</h2>
 
 <p>前回に引き続きブロック崩しを進める。
@@ -180,9 +180,9 @@ if (col.gameObject == bottomBar) {
   
   <entry>
     <title type="html"><![CDATA[Unity入門記録 02]]></title>
-    <link href="http://naonya3.github.io/blog/2014/02/15/unity-practice02/"/>
+    <link href="http://naonya3.me/blog/2014/02/15/unity-practice02/"/>
     <updated>2014-02-15T04:22:33+09:00</updated>
-    <id>http://naonya3.github.io/blog/2014/02/15/unity-practice02</id>
+    <id>http://naonya3.me/blog/2014/02/15/unity-practice02</id>
     <content type="html"><![CDATA[<h2>ブロック崩しの続き</h2>
 
 <p>前回から引き続きチュートリアルのブロック崩しを作っていきます。</p>
@@ -387,9 +387,9 @@ if (col.transform.IsChildOf(blocks.transform)) {
   
   <entry>
     <title type="html"><![CDATA[Unity入門記録 01]]></title>
-    <link href="http://naonya3.github.io/blog/2014/02/03/unity-practice01/"/>
+    <link href="http://naonya3.me/blog/2014/02/03/unity-practice01/"/>
     <updated>2014-02-03T01:30:44+09:00</updated>
-    <id>http://naonya3.github.io/blog/2014/02/03/unity-practice01</id>
+    <id>http://naonya3.me/blog/2014/02/03/unity-practice01</id>
     <content type="html"><![CDATA[<p>iPhoneプログラマーとして2年間Objective-Cを書いて、その前にFlashを2年。</p>
 
 <p>Unity4.3から2Dゲームも作りやすくなったということなので、趣味ではじめてみようかと。</p>
@@ -432,7 +432,7 @@ if (col.transform.IsChildOf(blocks.transform)) {
 
 <h2>一応出来た</h2>
 
-<p><a href="http://naonya3.github.io/contents/unity/practice01/" target="_blank"><strong>Unity Web Playerが必要です。</strong></a></p>
+<p><a href="http://naonya3.me/contents/unity/practice01/" target="_blank"><strong>Unity Web Playerが必要です。</strong></a></p>
 
 <h2>iPhone用に書き出す</h2>
 

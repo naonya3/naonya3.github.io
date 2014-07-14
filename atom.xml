@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[naonya3.me]]></title>
-  <link href="http://naonya3.github.io/atom.xml" rel="self"/>
-  <link href="http://naonya3.github.io/"/>
-  <updated>2014-02-15T22:06:09+09:00</updated>
-  <id>http://naonya3.github.io/</id>
+  <link href="http://naonya3.me/atom.xml" rel="self"/>
+  <link href="http://naonya3.me/"/>
+  <updated>2014-07-14T17:30:19+09:00</updated>
+  <id>http://naonya3.me/</id>
   <author>
     <name><![CDATA[にょす(@naonya3)]]></name>
     
@@ -14,10 +14,128 @@
 
   
   <entry>
+    <title type="html"><![CDATA[子供も大人も楽しめるRomoで遊んできた話]]></title>
+    <link href="http://naonya3.me/blog/2014/07/14/romo/"/>
+    <updated>2014-07-14T17:07:51+09:00</updated>
+    <id>http://naonya3.me/blog/2014/07/14/romo</id>
+    <content type="html"><![CDATA[<p>昨日<a href="http://everevo.com/event/13478">「iPhone x ロボットハッカソン
+大人の夏休みの自由研究 〜Romoで絶対起きられる目覚まし時計を作ろう〜」</a>に参加してきました。</p>
+
+<p><img src="http://everevo.com/uploads/event-header/13/da19367211e434fab40e8b93470236f2.png" alt="http://everevo.com/uploads/event-header/13/da19367211e434fab40e8b93470236f2.png" /></p>
+
+<p>タイトル通り、Romoを使って目覚まし時計を作るハッカソンです。</p>
+
+<h2>Romoとは</h2>
+
+<p><a href="http://www.romotive.jp/">公式サイト</a>(<a href="http://www.romotive.jp/">http://www.romotive.jp/</a>)</p>
+
+<p>つまるところ、<strong>iPhoneを挿すと操作できるロボット</strong>で、用意されているアプリ以外にも自分でプログラムを書いて操作できちゃいます。</p>
+
+<h2>Romo SDKでできること</h2>
+
+<h3>Romoのキャタピラの操作</h3>
+
+<p>左右別々に操作するAPIに加え、簡単に前進後退回転を行うためのAPIが用意されています。</p>
+
+<h3>RomoのLEDを操作</h3>
+
+<p>今回は使いませんでしたが、LEDも操作できます。</p>
+
+<h3>RomoのキャラクターUI操作</h3>
+
+<p>Romoにはキャラクターがいるのですが、このキャラクターの表情を操作したり、声を出させたりを簡単に行えます。</p>
+
+<p>上記２つはRomoに接続しないと動作しませんが、このAPI郡はRomoが無くても動作します。</p>
+
+<p>とにかく簡単で可愛いので、画面に関してはこのキャラクターを動かしておけばどうにかなります。</p>
+
+<h2>当日の様子</h2>
+
+<p>会場は<a href="http://hubtokyo.com/">HUB Tokyo</a>でした。</p>
+
+<p>会場に着くとRomoが貰え、簡単な挨拶と説明後直ぐに開発がスタート。</p>
+
+<p><a href="http://d.hatena.ne.jp/shu223/20140713/1405235307">堤さん</a>の近くに座っていたのですが、同じ職場に居た頃はあまり近くで開発したことがなかったので楽しかったです。</p>
+
+<blockquote class="twitter-tweet" lang="ja"><p>参加者の皆さん、一日お疲れ様でした！皆さん、独創的なアラームアプリのデモで沢山楽しませて頂きました！ <a href="https://twitter.com/hashtag/Romo%E3%83%8F%E3%83%83%E3%82%AB%E3%82%BD%E3%83%B3?src=hash">#Romoハッカソン</a> <a href="https://twitter.com/RomotiveJP">@RomotiveJP</a> <a href="http://t.co/XvUOiFU898">pic.twitter.com/XvUOiFU898</a></p>&mdash; Spotry.me (@spotryme) <a href="https://twitter.com/spotryme/statuses/488306072461930496">2014, 7月 13</a></blockquote>
+
+
+<script async src="http://naonya3.me//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+<p>他にもいろいろな方が記事にされているので、そちらも読んでいただくともっと楽しいかと思います。</p>
+
+<ul>
+<li><a href="http://www.romotive.jp/event/20140714/index.html">Romoハッカソン with GUILD@ HUBTokyo</a></li>
+<li><a href="http://d.hatena.ne.jp/shu223/20140713/1405235307">自作iOSアプリで制御できるロボット、Romo のハッカソンに参加してきました</a></li>
+<li><a href="http://yoonchulkoh.hatenablog.com/entry/2014/07/14/103303">体感型のエデュケーショナルロボットRomoのハッカソンに行ってきました</a></li>
+<li><a href="http://cocopon.me/blog/?p=4963">自走式のかわいいiPhoneロボ「Romo」のハッカソンに参加してきました</a></li>
+<li><a href="http://blog.morizotter.com/2014/07/13/iphone-romo-alarm-clock/">iPhoneと合体してかわいく動くRomoをプログラミングするハッカソンに参加してきました！</a></li>
+</ul>
+
+
+<h2>作ったもの</h2>
+
+<p>目覚まし時計がテーマだったので、<strong>Romoを釣ることができるアプリを作りました</strong>。</p>
+
+<p>2台のiPhoneを使い、片方をRomoに(魚側)、もう片方を手に持ち(竿側)遊びます。</p>
+
+<p>一応目覚まし時計なので、朝方の方がRomoを釣りやすい設定にしています。
+Romoを釣りたかったら早起きするべし、ってことです。</p>
+
+<p>技術的な話をすると、</p>
+
+<ul>
+<li>MultipeerConnectivityで2台のiPhoneを通信</li>
+<li>CoreMotionで竿側のキャスティングやフッキングといった動作を検出</li>
+</ul>
+
+
+<p>あとは、キャスティング、フッキングなどのイベントをRomoが受け取ったら
+前進や後退をさせて釣りっぽく演出しています。</p>
+
+<p>竿側のiPhoneの画面をくるくる触ると糸が巻けて、Romoが近づいてきます。</p>
+
+<p>Romoの画面をタッチするとGetです。</p>
+
+<p>記念撮影などして、リリースしてあげましょう。</p>
+
+<p>池澤あやか賞も貰えて最高です。</p>
+
+<blockquote class="twitter-tweet" lang="ja"><p>お疲れ様でした。Romo可愛いです [pic] — <a href="https://t.co/IR37bX7T6T">https://t.co/IR37bX7T6T</a></p>&mdash; にょす君 (@naonya3) <a href="https://twitter.com/naonya3/statuses/488266710189740033">2014, 7月 13</a></blockquote>
+
+
+<script async src="http://naonya3.me//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+<h2>まとめ</h2>
+
+<p>ゆるい雰囲気のハッカソンで、終始楽しく開発することが出来ました。</p>
+
+<p>RomoSDKは簡単に扱えるように設計されていたので、iPhone開発者ならば特に躓くこと無くRomoを操作できると思います。</p>
+
+<h2>おまけ</h2>
+
+<p>Romoをもらうことが出来たので、家に帰ってから公式アプリで遊んでみました。子供向けに作られていますが、これが結構楽しい！</p>
+
+<p>Romoがちゃんと感情のあるロボットに見えてきます。自分で作ってる時はこんな気持にならなかったのに！(笑) 小学生くらいの子なら、大人が最初に一緒に遊んであげれば十分につかいこなせるのでは。</p>
+
+<p>まだ日本では発売前ですが、こちらで予約受け付けしているので興味のある方はいかがでしょうか？</p>
+
+<ul>
+<li><a href="http://www.romotive.jp/item/ROMO.html">http://www.romotive.jp/item/ROMO.html</a>(2014年7月24日頃の出荷予定)</li>
+</ul>
+
+
+<p><img src="http://www.romotive.jp/client_info/ROMO/itemimage/romo5-3quarter-xlg.png" alt="http://www.romotive.jp/client_info/ROMO/itemimage/romo5-3quarter-xlg.png" /></p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Unity入門記録03]]></title>
-    <link href="http://naonya3.github.io/blog/2014/02/15/unity-practice03/"/>
+    <link href="http://naonya3.me/blog/2014/02/15/unity-practice03/"/>
     <updated>2014-02-15T22:03:29+09:00</updated>
-    <id>http://naonya3.github.io/blog/2014/02/15/unity-practice03</id>
+    <id>http://naonya3.me/blog/2014/02/15/unity-practice03</id>
     <content type="html"><![CDATA[<h2>ブロック崩しを仕上げる</h2>
 
 <p>前回に引き続きブロック崩しを進める。
@@ -205,7 +323,7 @@
 
 <h2>とりあえず遊べる感じになった</h2>
 
-<p><a href="http://naonya3.github.io/contents/unity/practice03/">Unity WebPlayerが必要です</a></p>
+<p><a href="http://naonya3.me/contents/unity/practice03/">Unity WebPlayerが必要です</a></p>
 
 <h2>まとめ</h2>
 
@@ -221,9 +339,9 @@
   
   <entry>
     <title type="html"><![CDATA[Unity入門記録 02]]></title>
-    <link href="http://naonya3.github.io/blog/2014/02/15/unity-practice02/"/>
+    <link href="http://naonya3.me/blog/2014/02/15/unity-practice02/"/>
     <updated>2014-02-15T04:22:33+09:00</updated>
-    <id>http://naonya3.github.io/blog/2014/02/15/unity-practice02</id>
+    <id>http://naonya3.me/blog/2014/02/15/unity-practice02</id>
     <content type="html"><![CDATA[<h2>ブロック崩しの続き</h2>
 
 <p>前回から引き続きチュートリアルのブロック崩しを作っていきます。</p>
@@ -314,7 +432,7 @@
 
 <p>これがコード全体です。実行してみます。</p>
 
-<p><a href="http://naonya3.github.io/contents/unity/practice02/01.html">Unity WebPlayerが必要です。</a></p>
+<p><a href="http://naonya3.me/contents/unity/practice02/01.html">Unity WebPlayerが必要です。</a></p>
 
 <p><strong>おしい。</strong></p>
 
@@ -413,7 +531,7 @@
 
 <p><img src="https://copy.com/thumbs_public/huNJgmpm8jYe/game.png?revision=44&amp;size=512" alt="game" /></p>
 
-<p><a href="http://naonya3.github.io/contents/unity/practice02/02.html">Unity WebPlayerが必要です。</a></p>
+<p><a href="http://naonya3.me/contents/unity/practice02/02.html">Unity WebPlayerが必要です。</a></p>
 
 <p>あと少しで完成しそうですが、疲れたので次にします。</p>
 
@@ -445,9 +563,9 @@
   
   <entry>
     <title type="html"><![CDATA[Unity入門記録 01]]></title>
-    <link href="http://naonya3.github.io/blog/2014/02/03/unity-practice01/"/>
+    <link href="http://naonya3.me/blog/2014/02/03/unity-practice01/"/>
     <updated>2014-02-03T01:30:44+09:00</updated>
-    <id>http://naonya3.github.io/blog/2014/02/03/unity-practice01</id>
+    <id>http://naonya3.me/blog/2014/02/03/unity-practice01</id>
     <content type="html"><![CDATA[<p>iPhoneプログラマーとして2年間Objective-Cを書いて、その前にFlashを2年。</p>
 
 <p>Unity4.3から2Dゲームも作りやすくなったということなので、趣味ではじめてみようかと。</p>
@@ -490,7 +608,7 @@
 
 <h2>一応出来た</h2>
 
-<p><a href="http://naonya3.github.io/contents/unity/practice01/" target="_blank"><strong>Unity Web Playerが必要です。</strong></a></p>
+<p><a href="http://naonya3.me/contents/unity/practice01/" target="_blank"><strong>Unity Web Playerが必要です。</strong></a></p>
 
 <h2>iPhone用に書き出す</h2>
 
@@ -553,9 +671,9 @@
   
   <entry>
     <title type="html"><![CDATA[IRKit]]></title>
-    <link href="http://naonya3.github.io/blog/2014/01/05/irkit/"/>
+    <link href="http://naonya3.me/blog/2014/01/05/irkit/"/>
     <updated>2014-01-05T23:04:00+09:00</updated>
-    <id>http://naonya3.github.io/blog/2014/01/05/irkit</id>
+    <id>http://naonya3.me/blog/2014/01/05/irkit</id>
     <content type="html"><![CDATA[<p><img src="https://copy.com/thumbs_public/ZcK4LNj1hEy1/IMG_7214.JPG?revision=35&amp;size=512" alt="IRKit" /></p>
 
 <p>遠隔操作できる家電リモコン。</p>
@@ -732,9 +850,9 @@ STATUSランプが点滅すればOKです。</p>
   
   <entry>
     <title type="html"><![CDATA[AS3で言うEnterFrame的なの]]></title>
-    <link href="http://naonya3.github.io/blog/2013/06/13/cadisplaylink/"/>
+    <link href="http://naonya3.me/blog/2013/06/13/cadisplaylink/"/>
     <updated>2013-06-13T18:20:00+09:00</updated>
-    <id>http://naonya3.github.io/blog/2013/06/13/cadisplaylink</id>
+    <id>http://naonya3.me/blog/2013/06/13/cadisplaylink</id>
     <content type="html"><![CDATA[<p>Objective-Cでたまに使いたくなって、いつも忘れるのでメモ</p>
 
 <p>CADisplayLink使う方法</p>
@@ -779,9 +897,9 @@ STATUSランプが点滅すればOKです。</p>
   
   <entry>
     <title type="html"><![CDATA[Copy.comを画像ストレージにする]]></title>
-    <link href="http://naonya3.github.io/blog/2013/05/25/strage-service-copy/"/>
+    <link href="http://naonya3.me/blog/2013/05/25/strage-service-copy/"/>
     <updated>2013-05-25T14:22:00+09:00</updated>
-    <id>http://naonya3.github.io/blog/2013/05/25/strage-service-copy</id>
+    <id>http://naonya3.me/blog/2013/05/25/strage-service-copy</id>
     <content type="html"><![CDATA[<p>Qiitaや僕の大好きなMarkdownに画像を表示したい時、画像の置き場に困っていました。</p>
 
 <p>つまるところ、無料で使えていい具合のストレージサービスを探していた訳です。</p>
@@ -826,9 +944,9 @@ STATUSランプが点滅すればOKです。</p>
   
   <entry>
     <title type="html"><![CDATA[WEBアプリのMarkdownエディタStackEditが便利]]></title>
-    <link href="http://naonya3.github.io/blog/2013/05/24/stack-edit/"/>
+    <link href="http://naonya3.me/blog/2013/05/24/stack-edit/"/>
     <updated>2013-05-24T01:42:00+09:00</updated>
-    <id>http://naonya3.github.io/blog/2013/05/24/stack-edit</id>
+    <id>http://naonya3.me/blog/2013/05/24/stack-edit</id>
     <content type="html"><![CDATA[<p>議事録やメモをとる時、Markdownで書くことが多いのですが、普段は<a href="http://mouapp.com/">Mou</a>や<a href="http://kobito.qiita.com/">Kobito</a>を使っています。(リアルタイムプレビューが必要なければなんだって書けるのですけど)</p>
 
 <p>ただ、いちいちアプリを立ち上げるのが面倒すぎて頭の毛が抜けかかっていた所に、いい感じのWEBアプリを教えて貰らいました。</p>
@@ -850,9 +968,9 @@ STATUSランプが点滅すればOKです。</p>
   
   <entry>
     <title type="html"><![CDATA[2013年の抱負]]></title>
-    <link href="http://naonya3.github.io/blog/2013/01/17/2013year/"/>
+    <link href="http://naonya3.me/blog/2013/01/17/2013year/"/>
     <updated>2013-01-17T21:18:00+09:00</updated>
-    <id>http://naonya3.github.io/blog/2013/01/17/2013year</id>
+    <id>http://naonya3.me/blog/2013/01/17/2013year</id>
     <content type="html"><![CDATA[<p>新年明けましておめでとうございます。<br/>
 せっかく何度目か分からないblogを立ち上げたので、今年の抱負を書いておきます。</p>
 
