@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="naonya3の個人的な日記">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
+<link rel="stylesheet" href="/css/normalize.css">
+<link rel="stylesheet" href="/css/skeleton.css">
+<link rel="stylesheet" href="/css/custom.css">
+<link rel="alternate" href="/index.xml" type="application/rss+xml" title="naonya3.me">
+<title>Unity入門記録 01 - naonya3.me</title>
+</head>
+<body>
+
+<div class="container">
+
+	<header role="banner">
+		<div class="header-logo">
+			<a href="/"><img src="/img/logo.jpg" width="60" height="60"></a>
+		</div>
+		
+	</header>
+
+
+	<main role="main">
+		<article itemscope itemtype="http://schema.org/BlogPosting">
+			<h1 class="entry-title" itemprop="headline">Unity入門記録 01</h1>
+			<span class="entry-meta"><time itemprop="datePublished" datetime="2014-02-03">February 03, 2014</time></span>
+			<section itemprop="entry-text">
+				
+
+<p>iPhoneプログラマーとして2年間Objective-Cを書いて、その前にFlashを2年。</p>
+
+<p>Unity4.3から2Dゲームも作りやすくなったということなので、趣味ではじめてみようかと。</p>
+
+<p>全く事前知識がないので、初心者の記録として晒しておきます。</p>
+
+<p>途中で飽きてやめたらごめんなさい。</p>
+
+<h2 id="ダウンロード:0777313b801a0ad35af83ab1fb256d05">ダウンロード</h2>
+
+<p>ここからダウンロード。</p>
+
+<p><a href="http://japan.unity3d.com/unity/download/">http://japan.unity3d.com/unity/download/</a></p>
+
+<p>ちなみに初心者なので無料版で十分（なはず）。</p>
+
+<p>iPhone/Androidにも無料で書き出せるようになったのは制作モチベーション上がる。</p>
+
+<h2 id="起動:0777313b801a0ad35af83ab1fb256d05">起動</h2>
+
+<p>サンプルと思われる、すごいゲーム出てきた。</p>
+
+<p><img src="https://copy.com/thumbs_public/6TU12KARC8ex/startup.png?revision=42&amp;size=512" alt="screenshot" />
+</p>
+
+<p>パネルたくさんファイルたくさんで、何したらいいか全くわからん。</p>
+
+<p>見た目で挫折しそう。</p>
+
+<h2 id="チュートリアルあった:0777313b801a0ad35af83ab1fb256d05">チュートリアルあった</h2>
+
+<p>本家にドキュメントとチュートリアルがあった。</p>
+
+<p><a href="http://japan.unity3d.com/developer/document/">http://japan.unity3d.com/developer/document/</a></p>
+
+<p>このチュートリアルをとりあえずやってみる。</p>
+
+<p><a href="http://japan.unity3d.com/developer/document/tutorial/my-first-unity/">http://japan.unity3d.com/developer/document/tutorial/my-first-unity/</a></p>
+
+<p>ブロック崩しが作れるらしい。</p>
+
+<h2 id="一応出来た:0777313b801a0ad35af83ab1fb256d05">一応出来た</h2>
+
+<p><a href="/contents/unity/practice01/" target="_blank"><strong>Unity Web Playerが必要です。</strong></a></p>
+
+<h2 id="iphone用に書き出す:0777313b801a0ad35af83ab1fb256d05">iPhone用に書き出す</h2>
+
+<p>せっかくなのでiPhoneで動作させたい。</p>
+
+<p>File &gt; Build Settingからできる。</p>
+
+<p>あとはXcodeプロジェクトが作られるので、開いてビルドすればいいだけ。</p>
+
+<p>ココらへんはUnityというよりiPhone開発の話なので必要ならググるとわかる。</p>
+
+<p><strong>しかし、チュートリアルのままだとiPhone上でキー入力のInputがないので、ラケットの操作ができない。</strong></p>
+
+<p>多分マウス入力の値を見るようにすれば、タッチ座標に変換されるはずなので、</p>
+
+<p>チュートリアルのラケットに対応するスクリプトの</p>
+
+<pre><code>function Update () {
+	rigidbody.AddForce(transform.right * Input.GetAxisRaw(&quot;Horizontal&quot;) * Accel, ForceMode.Impulse);
+}
+</code></pre>
+
+<p>この<code>Horizontal</code>の部分を<code>Mouse X</code>に変更した。</p>
+
+<pre><code>function Update () {
+	rigidbody.AddForce(transform.right * Input.GetAxisRaw(&quot;Mouse X&quot;) * Accel, ForceMode.Impulse);
+}
+</code></pre>
+
+<p><code>Mouse X</code>という値はInput Manager(Edit &gt; Project Settings &gt; Input &gt; inspectorパネル)をみるとわかる。</p>
+
+<p><img src="https://copy.com/thumbs_public/JOIaUGoJS4O1/screenshot.png?revision=41&amp;size=512" alt="screenshot" />
+</p>
+
+<p>こちらは、実機のスクリーンショットです。</p>
+
+<p>見切れてるし、微妙な操作感だけど簡単に動かすことができた。</p>
+
+<h2 id="今日のまとめ:0777313b801a0ad35af83ab1fb256d05">今日のまとめ</h2>
+
+<p>ファイル一式を<a href="https://github.com/naonya3/Unity-Breakout/tree/practice01">Github</a>に置いておく。この記事に対応するバージョンは<code>practice01</code>という名前でタグが切ってある。</p>
+
+<p>Unityのインストール時間を除けばだいたい１時間あればここまで出来る。</p>
+
+<p>まずはプログラミング能力より、Unityというアプリケーションの操作に慣れる事と、何ができるのかを知る必要がありそう。</p>
+
+<p>ともあれ、Unity入門は簡単だったので時間あったらやってみると楽しいと思う。</p>
+
+<p>チュートリアルの次回分がなくなった(2014.2.2現在)
+ので、このあとは自分でブロック崩しを実装する必要がある。</p>
+
+<p>当たり判定の取り方がわかれば、多分すぐ出来るはず。</p>
+
+			</section>
+		</article>
+	</main>
+
+
+	<footer role="contentinfo">
+		<div class="hr"></div>
+		<div class="footer-link">
+			
+			<a href="https://twitter.com/naonya3" target="_blank">Twitter</a></span>
+			<a href="https://www.facebook.com/naonya3" target="_blank">Facebook</a></span>
+			
+		</div>
+		<div class="copyright">Copyright &copy; naonya3 All rights reserved.</div>
+	</footer>
+
+</div>
+
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-41200352-1', 'auto');
+	ga('send', 'pageview');
+</script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>

@@ -1,4 +1,0 @@
-User-agent: *
-Disallow: 
-
-Sitemap: http://naonya3.me/sitemap.xml 

@@ -1,0 +1,912 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>naonya3.me</title>
+    <link>http://naonya3.me/</link>
+    <description>Recent content on naonya3.me</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Mon, 14 Jul 2014 17:07:51 +0900</lastBuildDate>
+    <atom:link href="http://naonya3.me/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>子供も大人も楽しめるRomoで遊んできた話</title>
+      <link>http://naonya3.me/post/2014/07/14/romo/</link>
+      <pubDate>Mon, 14 Jul 2014 17:07:51 +0900</pubDate>
+      
+      <guid>http://naonya3.me/post/2014/07/14/romo/</guid>
+      <description>
+
+&lt;p&gt;昨日&lt;a href=&#34;http://everevo.com/event/13478&#34;&gt;「iPhone x ロボットハッカソン
+大人の夏休みの自由研究 〜Romoで絶対起きられる目覚まし時計を作ろう〜」&lt;/a&gt;に参加してきました。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://everevo.com/uploads/event-header/13/da19367211e434fab40e8b93470236f2.png&#34; alt=&#34;http://everevo.com/uploads/event-header/13/da19367211e434fab40e8b93470236f2.png&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;タイトル通り、Romoを使って目覚まし時計を作るハッカソンです。&lt;/p&gt;
+
+&lt;h2 id=&#34;romoとは:3735c3e6d4ed3e467ea0f500d4eb868f&#34;&gt;Romoとは&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.romotive.jp/&#34;&gt;公式サイト&lt;/a&gt;(&lt;a href=&#34;http://www.romotive.jp/&#34;&gt;http://www.romotive.jp/&lt;/a&gt;)&lt;/p&gt;
+
+&lt;p&gt;つまるところ、&lt;strong&gt;iPhoneを挿すと操作できるロボット&lt;/strong&gt;で、用意されているアプリ以外にも自分でプログラムを書いて操作できちゃいます。&lt;/p&gt;
+
+&lt;h2 id=&#34;romo-sdkでできること:3735c3e6d4ed3e467ea0f500d4eb868f&#34;&gt;Romo SDKでできること&lt;/h2&gt;
+
+&lt;h3 id=&#34;romoのキャタピラの操作:3735c3e6d4ed3e467ea0f500d4eb868f&#34;&gt;Romoのキャタピラの操作&lt;/h3&gt;
+
+&lt;p&gt;左右別々に操作するAPIに加え、簡単に前進後退回転を行うためのAPIが用意されています。&lt;/p&gt;
+
+&lt;h3 id=&#34;romoのledを操作:3735c3e6d4ed3e467ea0f500d4eb868f&#34;&gt;RomoのLEDを操作&lt;/h3&gt;
+
+&lt;p&gt;今回は使いませんでしたが、LEDも操作できます。&lt;/p&gt;
+
+&lt;h3 id=&#34;romoのキャラクターui操作:3735c3e6d4ed3e467ea0f500d4eb868f&#34;&gt;RomoのキャラクターUI操作&lt;/h3&gt;
+
+&lt;p&gt;Romoにはキャラクターがいるのですが、このキャラクターの表情を操作したり、声を出させたりを簡単に行えます。&lt;/p&gt;
+
+&lt;p&gt;上記２つはRomoに接続しないと動作しませんが、このAPI郡はRomoが無くても動作します。&lt;/p&gt;
+
+&lt;p&gt;とにかく簡単で可愛いので、画面に関してはこのキャラクターを動かしておけばどうにかなります。&lt;/p&gt;
+
+&lt;h2 id=&#34;当日の様子:3735c3e6d4ed3e467ea0f500d4eb868f&#34;&gt;当日の様子&lt;/h2&gt;
+
+&lt;p&gt;会場は&lt;a href=&#34;http://hubtokyo.com/&#34;&gt;HUB Tokyo&lt;/a&gt;でした。&lt;/p&gt;
+
+&lt;p&gt;会場に着くとRomoが貰え、簡単な挨拶と説明後直ぐに開発がスタート。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://d.hatena.ne.jp/shu223/20140713/1405235307&#34;&gt;堤さん&lt;/a&gt;の近くに座っていたのですが、同じ職場に居た頃はあまり近くで開発したことがなかったので楽しかったです。&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; lang=&#34;ja&#34;&gt;&lt;p&gt;参加者の皆さん、一日お疲れ様でした！皆さん、独創的なアラームアプリのデモで沢山楽しませて頂きました！ &lt;a href=&#34;https://twitter.com/hashtag/Romo%E3%83%8F%E3%83%83%E3%82%AB%E3%82%BD%E3%83%B3?src=hash&#34;&gt;#Romoハッカソン&lt;/a&gt; &lt;a href=&#34;https://twitter.com/RomotiveJP&#34;&gt;@RomotiveJP&lt;/a&gt; &lt;a href=&#34;http://t.co/XvUOiFU898&#34;&gt;pic.twitter.com/XvUOiFU898&lt;/a&gt;&lt;/p&gt;&amp;mdash; Spotry.me (@spotryme) &lt;a href=&#34;https://twitter.com/spotryme/statuses/488306072461930496&#34;&gt;2014, 7月 13&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;他にもいろいろな方が記事にされているので、そちらも読んでいただくともっと楽しいかと思います。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.romotive.jp/event/20140714/index.html&#34;&gt;Romoハッカソン with GUILD@ HUBTokyo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://spotry.me/2014/romo-sdk-hackathon-to-build-alarm-app-on-ios/&#34;&gt;【イベント】Romo/ロモのSDKを使ってアラームアプリを作成してみよう！「第一回ROMOハッカソン」にお邪魔してきたので、その様子をたっぷりとお伝えします！&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://d.hatena.ne.jp/shu223/20140713/1405235307&#34;&gt;自作iOSアプリで制御できるロボット、Romo のハッカソンに参加してきました&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://yoonchulkoh.hatenablog.com/entry/2014/07/14/103303&#34;&gt;体感型のエデュケーショナルロボットRomoのハッカソンに行ってきました&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://cocopon.me/blog/?p=4963&#34;&gt;自走式のかわいいiPhoneロボ「Romo」のハッカソンに参加してきました&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.morizotter.com/2014/07/13/iphone-romo-alarm-clock/&#34;&gt;iPhoneと合体してかわいく動くRomoをプログラミングするハッカソンに参加してきました！&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://ja.ngs.io/2014/07/14/romo-hackathon/&#34;&gt;#Romoハッカソン に参加してきた&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;作ったもの:3735c3e6d4ed3e467ea0f500d4eb868f&#34;&gt;作ったもの&lt;/h2&gt;
+
+&lt;p&gt;目覚まし時計がテーマだったので、&lt;strong&gt;Romoを釣ることができるアプリを作りました&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;p&gt;2台のiPhoneを使い、片方をRomoに(魚側)、もう片方を手に持ち(竿側)遊びます。&lt;/p&gt;
+
+&lt;p&gt;一応目覚まし時計なので、朝方の方がRomoを釣りやすい設定にしています。
+Romoを釣りたかったら早起きするべし、ってことです。&lt;/p&gt;
+
+&lt;p&gt;技術的な話をすると、&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;MultipeerConnectivityで2台のiPhoneを通信&lt;/li&gt;
+&lt;li&gt;CoreMotionで竿側のキャスティングやフッキングといった動作を検出&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;あとは、キャスティング、フッキングなどのイベントをRomoが受け取ったら
+前進や後退をさせて釣りっぽく演出しています。&lt;/p&gt;
+
+&lt;p&gt;竿側のiPhoneの画面をくるくる触ると糸が巻けて、Romoが近づいてきます。&lt;/p&gt;
+
+&lt;p&gt;Romoの画面をタッチするとGetです。&lt;/p&gt;
+
+&lt;p&gt;記念撮影などして、リリースしてあげましょう。&lt;/p&gt;
+
+&lt;p&gt;池澤あやか賞も貰えて最高です。&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; lang=&#34;ja&#34;&gt;&lt;p&gt;お疲れ様でした。Romo可愛いです [pic] — &lt;a href=&#34;https://t.co/IR37bX7T6T&#34;&gt;https://t.co/IR37bX7T6T&lt;/a&gt;&lt;/p&gt;&amp;mdash; にょす君 (@naonya3) &lt;a href=&#34;https://twitter.com/naonya3/statuses/488266710189740033&#34;&gt;2014, 7月 13&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;まとめ:3735c3e6d4ed3e467ea0f500d4eb868f&#34;&gt;まとめ&lt;/h2&gt;
+
+&lt;p&gt;ゆるい雰囲気のハッカソンで、終始楽しく開発することが出来ました。&lt;/p&gt;
+
+&lt;p&gt;RomoSDKは簡単に扱えるように設計されていたので、iPhone開発者ならば特に躓くこと無くRomoを操作できると思います。&lt;/p&gt;
+
+&lt;h2 id=&#34;おまけ:3735c3e6d4ed3e467ea0f500d4eb868f&#34;&gt;おまけ&lt;/h2&gt;
+
+&lt;p&gt;Romoをもらうことが出来たので、家に帰ってから公式アプリで遊んでみました。子供向けに作られていますが、これが結構楽しい！&lt;/p&gt;
+
+&lt;p&gt;Romoがちゃんと感情のあるロボットに見えてきます。自分で作ってる時はこんな気持にならなかったのに！(笑) 小学生くらいの子なら、大人が最初に一緒に遊んであげれば十分につかいこなせるのでは。&lt;/p&gt;
+
+&lt;p&gt;まだ日本では発売前ですが、こちらで予約受け付けしているので興味のある方はいかがでしょうか？&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.romotive.jp/item/ROMO.html&#34;&gt;http://www.romotive.jp/item/ROMO.html&lt;/a&gt;(2014年7月24日頃の出荷予定)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://www.romotive.jp/client_info/ROMO/itemimage/romo5-3quarter-xlg.png&#34; alt=&#34;http://www.romotive.jp/client_info/ROMO/itemimage/romo5-3quarter-xlg.png&#34; /&gt;
+&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Unity入門記録 03</title>
+      <link>http://naonya3.me/post/2014/02/15/unity-practice03/</link>
+      <pubDate>Sat, 15 Feb 2014 22:03:29 +0900</pubDate>
+      
+      <guid>http://naonya3.me/post/2014/02/15/unity-practice03/</guid>
+      <description>
+
+&lt;h2 id=&#34;ブロック崩しを仕上げる:d1e27b36d4124851e16452d4ee8fb41a&#34;&gt;ブロック崩しを仕上げる&lt;/h2&gt;
+
+&lt;p&gt;前回に引き続きブロック崩しを進める。
+今回はゲームクリアと、ゲームオーバーを実装する。&lt;/p&gt;
+
+&lt;h2 id=&#34;ゲームオーバーの実装:d1e27b36d4124851e16452d4ee8fb41a&#34;&gt;ゲームオーバーの実装&lt;/h2&gt;
+
+&lt;p&gt;簡単そうなのでこちらから。&lt;/p&gt;
+
+&lt;p&gt;これは前回と同じように当たり判定&lt;code&gt;OnCollisionEnter&lt;/code&gt;を使い、下のバーとの当たり判定を見ればいい。&lt;/p&gt;
+
+&lt;p&gt;下のバーのGameObjectを取得できればほぼ終わり。&lt;/p&gt;
+
+&lt;p&gt;GameObjectを取得する方法でとりあえず知っているのは&lt;code&gt;Find&lt;/code&gt;を使う方法だけなので、Hierarchyパネルで下のバーに一意な名前をつけて取得しやすくする。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;BottomBar&lt;/code&gt;という名前をつけた。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://copy.com/thumbs_public/pd7IZyLqN9dK/BottomBar.png?revision=45&amp;amp;size=512&#34; alt=&#34;BottomBar&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;ゲームオーバー画面は後で作るとして、ひとまず「ボールを消す」ということでゲームオーバーを表現した。&lt;/p&gt;
+
+&lt;p&gt;コードはこんな感じで、BallController内に実装した。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;function OnCollisionEnter(col:Collision) {
+    var blocks = GameObject.Find(&amp;quot;Blocks&amp;quot;);
+    if (col.transform.IsChildOf(blocks.transform)) {
+    	Destroy(col.gameObject);
+    }
+
+    var bottomBar = GameObject.Find(&amp;quot;BottomBar&amp;quot;);
+    if (col.gameObject == bottomBar) {
+    	Debug.Log(&amp;quot;Game Over&amp;quot;);
+    	Destroy(this.gameObject);
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;BallControllerにゲームオーバー処理などを書いていくのは、プログラムの規模が大きくなると良くないことが起きるのは容易に想像できるが、今回は気にしないでおく。&lt;/p&gt;
+
+&lt;h2 id=&#34;ゲームクリアの実装:d1e27b36d4124851e16452d4ee8fb41a&#34;&gt;ゲームクリアの実装&lt;/h2&gt;
+
+&lt;p&gt;ブロック崩しは、ブロックがなくなったらクリアだ。&lt;/p&gt;
+
+&lt;p&gt;すべてのブロックは&lt;code&gt;Blocks&lt;/code&gt;の子にしてあるので、&lt;code&gt;Blocks&lt;/code&gt;の子が&lt;code&gt;0&lt;/code&gt;になったらクリアでいいだろう。&lt;/p&gt;
+
+&lt;p&gt;子の数え方がわからないので調べる。&lt;/p&gt;
+
+&lt;p&gt;前回の経験上、子関係のものは&lt;code&gt;Transform&lt;/code&gt;にありそうなので、ドキュメントの&lt;code&gt;Transform&lt;/code&gt;の項を眺めてたらベストなプロパティがあった。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://docs.unity3d.com/Documentation/ScriptReference/Transform-childCount.html&#34;&gt;Transform.childCount&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;これでできそうだ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;function OnCollisionEnter(col:Collision) {
+    var blocks = GameObject.Find(&amp;quot;Blocks&amp;quot;);
+    if (col.transform.IsChildOf(blocks.transform)) {
+    	Destroy(col.gameObject);
+
+    	// Check Count of Balls.
+    	if (blocks.transform.childCount == 0) {
+    		Debug.Log(&amp;quot;Clear!!&amp;quot;);
+    		Destroy(this.gameObject);
+    	}
+    }
+
+    var bottomBar = GameObject.Find(&amp;quot;BottomBar&amp;quot;);
+    if (col.gameObject == bottomBar) {
+    	Debug.Log(&amp;quot;Game Over&amp;quot;);
+    	Destroy(this.gameObject);
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ブロックとの当たり判定の中で残りのブロック数をチェックして&lt;code&gt;0&lt;/code&gt;ならクリアだ。&lt;/p&gt;
+
+&lt;p&gt;先ほどと同様に、ボールを消すことでクリアとした。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;だが、これではダメだった。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Destroy()&lt;/code&gt;の直後はまだ実際にオブジェクトは削除されていないようで、カウントが減らなかった。&lt;/p&gt;
+
+&lt;p&gt;ドキュメントを読んでみるとしっかりと書いてあった。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://docs.unity3d.com/Documentation/ScriptReference/Object.Destroy.html&#34;&gt;Object.Destroy&lt;/a&gt;
+&amp;gt; Actual object destruction is always delayed until after the current Update loop&lt;/p&gt;
+
+&lt;p&gt;ということ毎ループ、ブロックの残りの数を数えることにした。&lt;/p&gt;
+
+&lt;p&gt;ブロック崩し位なら対して影響なさそうだが、本当はあまり無駄な処理を毎ループ行うべきではない。&lt;/p&gt;
+
+&lt;p&gt;毎ループ処理をしたいときは、&lt;code&gt;Update()&lt;/code&gt;の中に処理を書けば良い。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#pragma strict
+
+var speed = 5;
+
+function Start () {
+	rigidbody.AddForce((transform.forward + transform.right) * speed, ForceMode.VelocityChange);
+}
+
+function Update () {
+	var blocks = GameObject.Find(&amp;quot;Blocks&amp;quot;);
+
+	// Check count of remaining blocks.
+	if (blocks.transform.childCount == 0) {
+    		Debug.Log(&amp;quot;Clear!!&amp;quot;);
+    		Destroy(this.gameObject);
+    }
+}
+
+function OnCollisionEnter(col:Collision) {
+    var blocks = GameObject.Find(&amp;quot;Blocks&amp;quot;);
+    if (col.transform.IsChildOf(blocks.transform)) {
+    	Destroy(col.gameObject);
+    }
+
+    var bottomBar = GameObject.Find(&amp;quot;BottomBar&amp;quot;);
+    if (col.gameObject == bottomBar) {
+    	Debug.Log(&amp;quot;Game Over&amp;quot;);
+    	Destroy(this.gameObject);
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;とりあえず遊べる感じになった:d1e27b36d4124851e16452d4ee8fb41a&#34;&gt;とりあえず遊べる感じになった&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://naonya3.me/contents/unity/practice03/&#34;&gt;Unity WebPlayerが必要です&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;まとめ:d1e27b36d4124851e16452d4ee8fb41a&#34;&gt;まとめ&lt;/h2&gt;
+
+&lt;p&gt;少しわかってきたので、ドキュメントを眺めるようにしよう。&lt;/p&gt;
+
+&lt;p&gt;次回は、シーン遷移をやってみたいので、シーン遷移させてゲームクリアの画面を表示させるようにする。&lt;/p&gt;
+
+&lt;p&gt;ソースコードは&lt;a href=&#34;https://github.com/naonya3/Unity-Breakout&#34;&gt;github&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;tagは&lt;code&gt;practice03&lt;/code&gt;です。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Unity入門記録 02</title>
+      <link>http://naonya3.me/post/2014/02/15/unity-practice02/</link>
+      <pubDate>Sat, 15 Feb 2014 04:22:33 +0900</pubDate>
+      
+      <guid>http://naonya3.me/post/2014/02/15/unity-practice02/</guid>
+      <description>
+
+&lt;h2 id=&#34;ブロック崩しの続き:1a54d26856387034c94aa45a108eaaaf&#34;&gt;ブロック崩しの続き&lt;/h2&gt;
+
+&lt;p&gt;前回から引き続きチュートリアルのブロック崩しを作っていきます。&lt;/p&gt;
+
+&lt;p&gt;ただ、本家のチュートリアルの続きが無いので自分で考えながらです。（日本語しか見てないので、英語版は用意されているのかもしれませんが）&lt;/p&gt;
+
+&lt;h2 id=&#34;まずはブロックの用意:1a54d26856387034c94aa45a108eaaaf&#34;&gt;まずはブロックの用意&lt;/h2&gt;
+
+&lt;p&gt;前回の成果物に圧倒的に足りないもの。&lt;/p&gt;
+
+&lt;p&gt;そう、&lt;strong&gt;ブロック&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;p&gt;壁を作ったのと同様にしていけば問題ないでしょう。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://copy.com/thumbs_public/YQo29juAMwsk/block.png?revision=43&amp;amp;size=512&#34; alt=&#34;Blocks&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;こんな感じで配置していきます。&lt;/p&gt;
+
+&lt;p&gt;これだけで、ボールはブロックに跳ねるようになります。&lt;/p&gt;
+
+&lt;p&gt;各ブロックは、Empty Objectを作ってそこに入れていくと管理しやすいでしょう。&lt;/p&gt;
+
+&lt;p&gt;Empty Objectはフォルダみたいなものでしょうか。AfterEffectやっている人はNullObjectの概念が非常に近い感じです。&lt;/p&gt;
+
+&lt;p&gt;AS3やObjective-C、JS（DOM）だとそれぞれSprite, UIView, divみたいなものを意識するといいかもしれません。&lt;/p&gt;
+
+&lt;p&gt;これだけではブロックは消えたりしないので、ボールとの当たり判定を見て自分でブロックを消す必要がありそうです。&lt;/p&gt;
+
+&lt;p&gt;Unityにおいての当たり判定の取り方を調べれは良さそうです。&lt;/p&gt;
+
+&lt;h2 id=&#34;オブジェクト同士の当たり判定を取る:1a54d26856387034c94aa45a108eaaaf&#34;&gt;オブジェクト同士の当たり判定を取る&lt;/h2&gt;
+
+&lt;p&gt;調べてみると、オブジェクト同士が衝突した際に、&lt;code&gt;Rigidbody&lt;/code&gt;(前回ボールに設定した)の&lt;code&gt;OnCollisionEnter(col : Collision)&lt;/code&gt;メソッドが呼ばれるらしいです。&lt;/p&gt;
+
+&lt;p&gt;Unityの&lt;code&gt;Collision&lt;/code&gt;オブジェクトというのがわからないので調べてみると、衝突という意味みたいです。そのままですね。&lt;/p&gt;
+
+&lt;p&gt;Collisionには衝突の情報として、衝突対象の&lt;code&gt;GameObject&lt;/code&gt;が格納されてるっぽいので、そのオブジェクトを&lt;code&gt;OnCollisionEnter&lt;/code&gt;の中で削除すれば良さそうです。&lt;/p&gt;
+
+&lt;p&gt;オブジェクトの削除方法も調べてみました。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Destroy(GameObject)&lt;/code&gt;というメソッドを使えばいいっぽいです。&lt;/p&gt;
+
+&lt;p&gt;まとめると&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;function OnCollisionEnter(col:Collision) {
+    Destroy(col.gameObject);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;でしょう。&lt;/p&gt;
+
+&lt;p&gt;これを前回のBallControllerに追加してみることに。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#pragma strict
+
+var speed = 5;
+
+function Start () {
+	rigidbody.AddForce((transform.forward + transform.right) * speed, ForceMode.VelocityChange);
+}
+
+function Update () {
+
+}
+
+function OnCollisionEnter(col:Collision) {
+    Destroy(col.gameObject);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これがコード全体です。実行してみます。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://naonya3.me/contents/unity/practice02/01.html&#34;&gt;Unity WebPlayerが必要です。&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;おしい。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;このままだと無差別殺人なので、当たった対象がブロックかどうか調べる必要がありそうです。&lt;/p&gt;
+
+&lt;h2 id=&#34;オブジェクトを見分ける:1a54d26856387034c94aa45a108eaaaf&#34;&gt;オブジェクトを見分ける&lt;/h2&gt;
+
+&lt;p&gt;どうやってオブジェクトを見分けるか考えてみました。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;col.gameObject.name&lt;/code&gt;でhierarchyパネル上でつけた名前が取得できることはわかったので、ブロック全部に同じ名前をつけてそれで判別してもいいのですが、ブロックなどの当たり判定対象が増えてきた時に大変な事になりそうです。&lt;/p&gt;
+
+&lt;p&gt;今回ブロックはすべて&lt;code&gt;Blocks&lt;/code&gt;という名前をつけたEmptyObjectに入れたので
+&lt;code&gt;col.gameObject&lt;/code&gt;が&lt;code&gt;Blocks&lt;/code&gt;の子かどうか知る方法はないか調べてみることに。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;(gameObject).transform.IsChildOf(gameObject)&lt;/code&gt;というメソッドがあったので、多分これが使えます。&lt;/p&gt;
+
+&lt;p&gt;なんでtransformに子を調べたりするメソッドが入っているのかよくわかりません。ドキュメントを後で読んできます。&lt;/p&gt;
+
+&lt;p&gt;とりあえず今回は、&lt;code&gt;Blocks.transform.IsChildOf(col.gameObject)&lt;/code&gt;で衝突したオブジェクトが&lt;code&gt;Blocks&lt;/code&gt;の子かどうか分かりそうです。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;が、実際はこのコードダメだった&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;is child Of hoge&lt;/code&gt;なので&lt;code&gt;hogeの子ですか？&lt;/code&gt;って意味のメソッドぽくて、&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;col.gameObject.transform.IsChildOf(Blocks);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;が正解。&lt;/p&gt;
+
+&lt;p&gt;肝心の&lt;code&gt;Blocks&lt;/code&gt;オブジェクトの取得方法ですが、&lt;code&gt;GameObject.Find&lt;/code&gt;という関数を使えば実現できそうです。&lt;/p&gt;
+
+&lt;p&gt;今回はhierarchy直下に&lt;code&gt;Blocks&lt;/code&gt;を配置しているので、&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;var blocks = GameObject.Find(&#39;/root/Blocks&#39;);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;で取得できるはずです。&lt;/p&gt;
+
+&lt;p&gt;と、思ったんだけど&lt;strong&gt;できませんでした。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;/root&lt;/code&gt; から辿れるって書いてある気がするんだけど、取得できませんでした。勘違いしてるみたいです。&lt;/p&gt;
+
+&lt;p&gt;GameObjectのたどり方は結構重要そうな気がするので、調べがいがありそう。&lt;/p&gt;
+
+&lt;p&gt;結局&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;var blocks = GameObject.Find(&#39;Blocks&#39;);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;で、取得出来ました。納得はしていない。&lt;/p&gt;
+
+&lt;p&gt;ということで、全体のコードが以下です。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#pragma strict
+
+var speed = 5;
+
+function Start () {
+	rigidbody.AddForce((transform.forward + transform.right) * speed, ForceMode.VelocityChange);
+}
+
+function Update () {
+
+}
+
+function OnCollisionEnter(col:Collision) {
+    var blocks = gameObject.Find(&amp;quot;Blocks&amp;quot;);
+    if (col.transform.IsChildOf(blocks.transform)) {
+    	Destroy(col.gameObject);
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これをビルドすると以下のようになります。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://copy.com/thumbs_public/huNJgmpm8jYe/game.png?revision=44&amp;amp;size=512&#34; alt=&#34;game&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://naonya3.me/contents/unity/practice02/02.html&#34;&gt;Unity WebPlayerが必要です。&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;あと少しで完成しそうですが、疲れたので次にします。&lt;/p&gt;
+
+&lt;p&gt;今回のソースも&lt;a href=&#34;https://github.com/naonya3/Unity-Breakout&#34;&gt;github&lt;/a&gt;にあげてあります。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;practice02&lt;/code&gt;タグを見て下さい。&lt;/p&gt;
+
+&lt;h2 id=&#34;ゲームオーバーはどうする:1a54d26856387034c94aa45a108eaaaf&#34;&gt;ゲームオーバーはどうする？&lt;/h2&gt;
+
+&lt;p&gt;同じように、枠の下側のCubeとの当たり判定を見ればいいでしょう。&lt;/p&gt;
+
+&lt;h2 id=&#34;ゲームクリアはどうする:1a54d26856387034c94aa45a108eaaaf&#34;&gt;ゲームクリアはどうする？&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;Blocks&lt;/code&gt;の子が&lt;code&gt;0&lt;/code&gt;になったらゲームクリアにできそう。&lt;/p&gt;
+
+&lt;p&gt;そのあと、ボールを止めたりシーンを遷移させたりすると完成かも。&lt;/p&gt;
+
+&lt;h2 id=&#34;今回のまとめと所感:1a54d26856387034c94aa45a108eaaaf&#34;&gt;今回のまとめと所感&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;GameObjectの取得は重要そうだ&lt;/li&gt;
+&lt;li&gt;Ballが他のObjectを操作するのはイケてない感じがする&lt;/li&gt;
+&lt;li&gt;プログラミング作法的な話は後でいいや&lt;/li&gt;
+&lt;li&gt;JSで書いてるっぽいけど、他の言語使えたよね？？？&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Unity入門記録 01</title>
+      <link>http://naonya3.me/post/2014/02/03/unity-practice01/</link>
+      <pubDate>Mon, 03 Feb 2014 01:30:44 +0900</pubDate>
+      
+      <guid>http://naonya3.me/post/2014/02/03/unity-practice01/</guid>
+      <description>
+
+&lt;p&gt;iPhoneプログラマーとして2年間Objective-Cを書いて、その前にFlashを2年。&lt;/p&gt;
+
+&lt;p&gt;Unity4.3から2Dゲームも作りやすくなったということなので、趣味ではじめてみようかと。&lt;/p&gt;
+
+&lt;p&gt;全く事前知識がないので、初心者の記録として晒しておきます。&lt;/p&gt;
+
+&lt;p&gt;途中で飽きてやめたらごめんなさい。&lt;/p&gt;
+
+&lt;h2 id=&#34;ダウンロード:0777313b801a0ad35af83ab1fb256d05&#34;&gt;ダウンロード&lt;/h2&gt;
+
+&lt;p&gt;ここからダウンロード。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://japan.unity3d.com/unity/download/&#34;&gt;http://japan.unity3d.com/unity/download/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;ちなみに初心者なので無料版で十分（なはず）。&lt;/p&gt;
+
+&lt;p&gt;iPhone/Androidにも無料で書き出せるようになったのは制作モチベーション上がる。&lt;/p&gt;
+
+&lt;h2 id=&#34;起動:0777313b801a0ad35af83ab1fb256d05&#34;&gt;起動&lt;/h2&gt;
+
+&lt;p&gt;サンプルと思われる、すごいゲーム出てきた。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://copy.com/thumbs_public/6TU12KARC8ex/startup.png?revision=42&amp;amp;size=512&#34; alt=&#34;screenshot&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;パネルたくさんファイルたくさんで、何したらいいか全くわからん。&lt;/p&gt;
+
+&lt;p&gt;見た目で挫折しそう。&lt;/p&gt;
+
+&lt;h2 id=&#34;チュートリアルあった:0777313b801a0ad35af83ab1fb256d05&#34;&gt;チュートリアルあった&lt;/h2&gt;
+
+&lt;p&gt;本家にドキュメントとチュートリアルがあった。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://japan.unity3d.com/developer/document/&#34;&gt;http://japan.unity3d.com/developer/document/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;このチュートリアルをとりあえずやってみる。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://japan.unity3d.com/developer/document/tutorial/my-first-unity/&#34;&gt;http://japan.unity3d.com/developer/document/tutorial/my-first-unity/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;ブロック崩しが作れるらしい。&lt;/p&gt;
+
+&lt;h2 id=&#34;一応出来た:0777313b801a0ad35af83ab1fb256d05&#34;&gt;一応出来た&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://naonya3.me/contents/unity/practice01/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Unity Web Playerが必要です。&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;iphone用に書き出す:0777313b801a0ad35af83ab1fb256d05&#34;&gt;iPhone用に書き出す&lt;/h2&gt;
+
+&lt;p&gt;せっかくなのでiPhoneで動作させたい。&lt;/p&gt;
+
+&lt;p&gt;File &amp;gt; Build Settingからできる。&lt;/p&gt;
+
+&lt;p&gt;あとはXcodeプロジェクトが作られるので、開いてビルドすればいいだけ。&lt;/p&gt;
+
+&lt;p&gt;ココらへんはUnityというよりiPhone開発の話なので必要ならググるとわかる。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;しかし、チュートリアルのままだとiPhone上でキー入力のInputがないので、ラケットの操作ができない。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;多分マウス入力の値を見るようにすれば、タッチ座標に変換されるはずなので、&lt;/p&gt;
+
+&lt;p&gt;チュートリアルのラケットに対応するスクリプトの&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;function Update () {
+	rigidbody.AddForce(transform.right * Input.GetAxisRaw(&amp;quot;Horizontal&amp;quot;) * Accel, ForceMode.Impulse);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;この&lt;code&gt;Horizontal&lt;/code&gt;の部分を&lt;code&gt;Mouse X&lt;/code&gt;に変更した。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;function Update () {
+	rigidbody.AddForce(transform.right * Input.GetAxisRaw(&amp;quot;Mouse X&amp;quot;) * Accel, ForceMode.Impulse);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;Mouse X&lt;/code&gt;という値はInput Manager(Edit &amp;gt; Project Settings &amp;gt; Input &amp;gt; inspectorパネル)をみるとわかる。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://copy.com/thumbs_public/JOIaUGoJS4O1/screenshot.png?revision=41&amp;amp;size=512&#34; alt=&#34;screenshot&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;こちらは、実機のスクリーンショットです。&lt;/p&gt;
+
+&lt;p&gt;見切れてるし、微妙な操作感だけど簡単に動かすことができた。&lt;/p&gt;
+
+&lt;h2 id=&#34;今日のまとめ:0777313b801a0ad35af83ab1fb256d05&#34;&gt;今日のまとめ&lt;/h2&gt;
+
+&lt;p&gt;ファイル一式を&lt;a href=&#34;https://github.com/naonya3/Unity-Breakout/tree/practice01&#34;&gt;Github&lt;/a&gt;に置いておく。この記事に対応するバージョンは&lt;code&gt;practice01&lt;/code&gt;という名前でタグが切ってある。&lt;/p&gt;
+
+&lt;p&gt;Unityのインストール時間を除けばだいたい１時間あればここまで出来る。&lt;/p&gt;
+
+&lt;p&gt;まずはプログラミング能力より、Unityというアプリケーションの操作に慣れる事と、何ができるのかを知る必要がありそう。&lt;/p&gt;
+
+&lt;p&gt;ともあれ、Unity入門は簡単だったので時間あったらやってみると楽しいと思う。&lt;/p&gt;
+
+&lt;p&gt;チュートリアルの次回分がなくなった(2014.2.2現在)
+ので、このあとは自分でブロック崩しを実装する必要がある。&lt;/p&gt;
+
+&lt;p&gt;当たり判定の取り方がわかれば、多分すぐ出来るはず。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>IRKit</title>
+      <link>http://naonya3.me/post/2014/01/05/irkit/</link>
+      <pubDate>Sun, 05 Jan 2014 23:04:00 +0900</pubDate>
+      
+      <guid>http://naonya3.me/post/2014/01/05/irkit/</guid>
+      <description>
+
+&lt;p&gt;&lt;img src=&#34;https://copy.com/thumbs_public/ZcK4LNj1hEy1/IMG_7214.JPG?revision=35&amp;amp;size=512&#34; alt=&#34;IRKit&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;遠隔操作できる家電リモコン。&lt;/p&gt;
+
+&lt;p&gt;お布団の中からリビングのエアコンを入れてみたり
+外出先からエアコンを入れてみたり&lt;/p&gt;
+
+&lt;p&gt;・・・寒いので、エアコンネタばかり出てきてしまいましたが、、&lt;/p&gt;
+
+&lt;p&gt;前職の先輩の&lt;a href=&#34;https://twitter.com/maaash&#34;&gt;mash&lt;/a&gt;さんが、そういったことを手軽に行えるようにするデバイス「&lt;a href=&#34;http://getirkit.com/&#34;&gt;IRKit&lt;/a&gt;」をなんと作り上げてしまったので、お試し版をお借りしました。&lt;/p&gt;
+
+&lt;p&gt;まだお試し版ということで、専用アプリがリリースされていなかったりと通常より手順がむずいですが、正式リリース時にはすごく使いやすいデバイスになっていると思います。&lt;/p&gt;
+
+&lt;p&gt;たぶんWifiが入っている家なら、IRKitを電源に差し、専用アプリからIRKitにアクセスするだけで使えちゃえます。&lt;/p&gt;
+
+&lt;p&gt;ということで、設定して遊んでみました。&lt;/p&gt;
+
+&lt;h2 id=&#34;irkitの初期設定:60f3c8ea242414aa86ef479c12a61106&#34;&gt;IRKitの初期設定&lt;/h2&gt;
+
+&lt;p&gt;まずはIRKitをWifiに接続するためにアプリをインストールします。&lt;/p&gt;
+
+&lt;p&gt;先ほど、専用アプリがリリースされていないと書きましたが、&lt;a href=&#34;https://github.com/irkit/ios-sdk&#34;&gt;github&lt;/a&gt;にはソースコードがありますので、そちらをインストールして使います。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Minimal&lt;/code&gt;というプロジェクトが設定アプリ＋αです。&lt;/p&gt;
+
+&lt;p&gt;ビルドにはCocoaPodで必要ライブラリをインストールする必要がありますが、正式版ではあまり関係のない話だと思いますので省略します。&lt;/p&gt;
+
+&lt;p&gt;アプリを起動して、画面の指示にしたがって設定するだけです。&lt;/p&gt;
+
+&lt;p&gt;と、言っても&lt;strong&gt;たったの3STEP&lt;/strong&gt;です。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;MicroUSBでIRKitを電源に接続&lt;/li&gt;
+&lt;li&gt;アプリに接続する無線LANの情報を入力する&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;モールス信号&lt;/strong&gt;でIRKitに無線LANの設定情報を送る&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://copy.com/thumbs_public/Y4j7vxtPuE7o/IMG_7198.JPG?revision=36&amp;amp;size=512&#34; alt=&#34;モールス信号で無線の設定情報を送る&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;右はモールス信号を送っている所です。遊び心があってすごい好きです。&lt;/p&gt;
+
+&lt;p&gt;設定が完了すると、赤色だったSTATUSランプが青色になります。&lt;/p&gt;
+
+&lt;h2 id=&#34;irkitでリモコンの信号を受信する:60f3c8ea242414aa86ef479c12a61106&#34;&gt;IRKitでリモコンの信号を受信する&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;IRKitに向けてリモコンを押すだけ&lt;/strong&gt;です。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://copy.com/thumbs_public/f1ddp3Yyl9Kr/IMG_7210.JPG?revision=37&amp;amp;size=512&#34; alt=&#34;押すだけ&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;先ほどインストールした&lt;code&gt;Minimal&lt;/code&gt;というアプリはリモコンの信号を学習する機能がついていますので、そちらを使えば受信したデータを簡易的に管理することができます。&lt;/p&gt;
+
+&lt;p&gt;また、IRKit自身にHTTPサーバがあり、APIが動いていますので
+直接APIを叩いて&lt;strong&gt;直近のリモコンのデータを取得&lt;/strong&gt;したり、&lt;strong&gt;取得したリデータをIRKitから赤外線で送信&lt;/strong&gt;させたりする事もできます。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://getirkit.com/&#34;&gt;IRKit公式&lt;/a&gt;サイトに書いてある情報のままですが、簡単にその方法を書きます&lt;/p&gt;
+
+&lt;h2 id=&#34;irkitのapiを叩いてリモコンデータを取得する:60f3c8ea242414aa86ef479c12a61106&#34;&gt;IRKitのAPIを叩いてリモコンデータを取得する&lt;/h2&gt;
+
+&lt;h3 id=&#34;まずはirkitのipアドレスを取得します:60f3c8ea242414aa86ef479c12a61106&#34;&gt;まずはIRKitのIPアドレスを取得します&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;$ dns-sd -B _irkit._tcp
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;このまま打てばok。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ dns-sd -B _irkit._tcp
+Browsing for _irkit._tcp
+DATE: ---Sun 05 Jan 2014---
+19:52:09.254  ...STARTING...
+Timestamp     A/R Flags if Domain                    Service Type              Instance Name
+19:52:09.911  Add     2  4 local.                    _irkit._tcp.              irkitd303
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;Instance Name&lt;/code&gt;の所を見ます。私の環境だと&lt;code&gt;irkitd303&lt;/code&gt;ですね。&lt;/p&gt;
+
+&lt;p&gt;で、&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ dns-sd -G v4 [Instance Name].local
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;です。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ dns-sd -G v4 irkitd303.local
+DATE: ---Sun 05 Jan 2014---
+19:52:55.967  ...STARTING...
+Timestamp     A/R Flags if Hostname                  Address                                      TTL
+19:52:56.606  Add     2  4 irkitd303.local.          192.168.11.9                                 10
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;Address&lt;/code&gt;が分かりました。&lt;/p&gt;
+
+&lt;h3 id=&#34;リモコンのデータを見る:60f3c8ea242414aa86ef479c12a61106&#34;&gt;リモコンのデータを見る&lt;/h3&gt;
+
+&lt;p&gt;IRKitが受信した直近のリモコンから送信された赤外線データを見るには&lt;code&gt;messages&lt;/code&gt;APIをつかいます。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ curl -i &amp;quot;http://192.168.11.9/messages&amp;quot;
+HTTP/1.0 200 OK
+Access-Control-Allow-Origin: *
+Server: IRKit/1.3.0.188.gbc9a662
+Content-Type: text/plain
+
+{&amp;quot;format&amp;quot;:&amp;quot;raw&amp;quot;,&amp;quot;freq&amp;quot;:38,&amp;quot;data&amp;quot;:[4713,1150,1150,1150,2368,1150,1150,1150,1150,1150,2368,1150,1150,1150,1150,1150,2368,1150,1150,1150,1150,1150,1150,1150,1150,50610,4713,1150,1150,1150,2368,1150,1150,1150,1150,1150,2368,1150,1150,1150,1150,1150,2368,1150,1150,1150,1150,1150,1150,1150,1150,50610,4713,1150,1150,1150,2368,1150,1150,1150,1150,1150,2368,1150,1150,1150,1150,1150,2368,1150,1150,1150,1150,1150,1150,1150,1150,52381,4713,1150,1150,1150,2368,1150,1150,1150,1150,1150,2368,1150,1150,1150,1150,1150,2368,1150,1150,1150,1150,1150,1150,1150,1150]}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;JSONで直近のデータが返ってきました。Bodyが空だった場合、もう一度IRKitにリモコンを向けてボタンを押してください。
+STATUSランプが点滅すればOKです。&lt;/p&gt;
+
+&lt;p&gt;ちなみのこのデータはテレビのボリュームアップ。&lt;/p&gt;
+
+&lt;h3 id=&#34;irkitからデータを送信する:60f3c8ea242414aa86ef479c12a61106&#34;&gt;IRKitからデータを送信する&lt;/h3&gt;
+
+&lt;p&gt;この受信データJSONを&lt;code&gt;messages&lt;/code&gt;APIにPOSTすることで、同じ信号をIRKitから送信することができます。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ curl -i &amp;quot;http://192.168.11.9/messages&amp;quot; -d &#39;{&amp;quot;format&amp;quot;:&amp;quot;raw&amp;quot;,&amp;quot;freq&amp;quot;:38,&amp;quot;data&amp;quot;:[4713,1150,1150,1150,2368,1150,1150,1150,1150,1150,2368,1150,1150,1150,1150,1150,2368,1150,1150,1150,1150,1150,1150,1150,1150,50610,4713,1150,1150,1150,2368,1150,1150,1150,1150,1150,2368,1150,1150,1150,1150,1150,2368,1150,1150,1150,1150,1150,1150,1150,1150,50610,4713,1150,1150,1150,2368,1150,1150,1150,1150,1150,2368,1150,1150,1150,1150,1150,2368,1150,1150,1150,1150,1150,1150,1150,1150]}&#39;
+HTTP/1.0 200 OK
+Access-Control-Allow-Origin: *
+Server: IRKit/1.3.0.188.gbc9a662
+Content-Type: text/plain
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;IRKitのSTATUSランプが点灯し、テレビのボリュームが上がった。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;楽しいｗ&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;まとめ:60f3c8ea242414aa86ef479c12a61106&#34;&gt;まとめ&lt;/h2&gt;
+
+&lt;p&gt;Curlから家電操作するの楽しぃぃぃ！&lt;/p&gt;
+
+&lt;p&gt;APIがシンプルですし、いろいろ組み合わせれば*&lt;strong&gt;&lt;em&gt;ハイテクな家&lt;/em&gt;&lt;/strong&gt;*が実現できそうです。&lt;/p&gt;
+
+&lt;p&gt;今はまだ準備中みたいですけど、そのうち外出先から自宅にあるIRKitへアクセスする手段も用意されるみたいです。&lt;/p&gt;
+
+&lt;p&gt;公式サイトの&lt;code&gt;IRKit Server HTTP API&lt;/code&gt;がそうかな。&lt;/p&gt;
+
+&lt;p&gt;もちろん今でも少し知識があれば外部からIRKitにアクセスすることは可能です。&lt;/p&gt;
+
+&lt;p&gt;外出先から寒ぅい部屋のエアコンをつけたり消したりできて大変捗りそうでwktkですね！&lt;/p&gt;
+
+&lt;p&gt;ちなみに僕はエアコンの電源をよく切り忘れて奥さんに怒られるので、「外出先からエアコンの電源を切れる」というだけで精神衛生上とても良い効果がありそう。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;ちなみにIRKitは簡単に蓋が開けられて、中はArduinoなので私はここに温度センサをつけて、ハイテクアクアリウムを構築する予定です。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://copy.com/thumbs_public/wUTLjtZZMyVp/IMG_7205.JPG?revision=38&amp;amp;size=512&#34; alt=&#34;分解した&#34; /&gt;
+&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>AS3で言うEnterFrame的なの</title>
+      <link>http://naonya3.me/post/2013/06/13/cadisplaylink/</link>
+      <pubDate>Thu, 13 Jun 2013 21:18:00 +0900</pubDate>
+      
+      <guid>http://naonya3.me/post/2013/06/13/cadisplaylink/</guid>
+      <description>&lt;p&gt;Objective-Cでたまに使いたくなって、いつも忘れるのでメモ&lt;/p&gt;
+
+&lt;p&gt;CADisplayLink使う方法&lt;/p&gt;
+
+&lt;p&gt;QuartzCoreが必要&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#import &amp;lt;QuartzCore/QuartzCore.h&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;で&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;_displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(_enterFrameHandler:)];
+[_displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これで&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;- (void)_enterFrameHandler:(CADisplayLink *)displayLink
+{
+    // 何らかの処理
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;でOK。メソッド名はもうちょっとObjC風にしてあげて。&lt;/p&gt;
+
+&lt;p&gt;ポーズは&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;_displayLink.paused = YES;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Copy.comを画像ストレージにする</title>
+      <link>http://naonya3.me/post/2013/05/25/strage-service-copy/</link>
+      <pubDate>Sat, 25 May 2013 21:18:00 +0900</pubDate>
+      
+      <guid>http://naonya3.me/post/2013/05/25/strage-service-copy/</guid>
+      <description>&lt;p&gt;Qiitaや僕の大好きなMarkdownに画像を表示したい時、画像の置き場に困っていました。&lt;/p&gt;
+
+&lt;p&gt;つまるところ、無料で使えていい具合のストレージサービスを探していた訳です。&lt;/p&gt;
+
+&lt;p&gt;WEBに埋め込むのだから、直接画像に対して固有のURLが発行される事が条件です。
+また、後々画像を移動させることもあるかもしれないので、ローカルには画像を残しておきたい。&lt;/p&gt;
+
+&lt;p&gt;そういう所だと、Dropboxの様にローカルのフォルダと同期出来るものが好ましかったのですがDropboxはあいにく個人的なファイルで容量が心許ないです。&lt;/p&gt;
+
+&lt;p&gt;有料アカウントにしてもいいですが、やっぱり無料でできるならやりたい。&lt;/p&gt;
+
+&lt;p&gt;そんな無料で大容量で画像に直リンクできちゃうストレージサービスどこかに無いかなー。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;ありました！&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://copy.com?r=elGQLg&#34;&gt;Copy&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;なんと始めから&lt;strong&gt;15GB&lt;/strong&gt;の容量が付いてきます。もちろん無料。始めた事をShareするとさらに&lt;strong&gt;+2GB&lt;/strong&gt;！&lt;/p&gt;
+
+&lt;p&gt;しかも、しかも、この&lt;a href=&#34;https://copy.com?r=elGQLg&#34;&gt;招待リンク&lt;/a&gt;から登録していただくとお互いに&lt;strong&gt;+5GB&lt;/strong&gt;と&lt;br /&gt;
+&lt;strong&gt;お得でWin-Winな設定になっております。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;まだ、対応サービスが少ないですが画像ストレージ的には困らないので
+初回登録の容量が大きいうちに登録してWin-Winしておく事をおすすめします（再掲&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;大事なURLなので、もう一度リンクを貼っておきますね。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://copy.com?r=elGQLg&#34;&gt;Copy&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;で、画像への直リンクの取得方法ですが、Copyのクライアントをインストールした方は
+対象ディレクトリ以下のファイルを右クリックで&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://copy.com/yKAkuLCQwNrmxP1G&#34; alt=&#34;画像のURLの取得の仕方&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;これだけでURLがコピーされます。というか、これだけで公開されちゃうので注意してください。&lt;/p&gt;
+
+&lt;p&gt;ブラウザで直接アクセスするとリダイレクトされますが、&lt;code&gt;&amp;lt;img&amp;gt;&lt;/code&gt;とかで指定する分には平気です。（2013.05.23現在&lt;/p&gt;
+
+&lt;p&gt;15GBもあればしばらく画像置き場に困らないはずです\^q\^&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>WEBアプリのMarkdownエディタStackEditが便利</title>
+      <link>http://naonya3.me/post/2013/05/24/stack-edit/</link>
+      <pubDate>Fri, 24 May 2013 21:18:00 +0900</pubDate>
+      
+      <guid>http://naonya3.me/post/2013/05/24/stack-edit/</guid>
+      <description>&lt;p&gt;議事録やメモをとる時、Markdownで書くことが多いのですが、普段は&lt;a href=&#34;http://mouapp.com/&#34;&gt;Mou&lt;/a&gt;や&lt;a href=&#34;http://kobito.qiita.com/&#34;&gt;Kobito&lt;/a&gt;を使っています。(リアルタイムプレビューが必要なければなんだって書けるのですけど)&lt;/p&gt;
+
+&lt;p&gt;ただ、いちいちアプリを立ち上げるのが面倒すぎて頭の毛が抜けかかっていた所に、いい感じのWEBアプリを教えて貰らいました。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;http://benweet.github.com/stackedit/&#34;&gt;StackEdit&lt;/a&gt;&lt;/strong&gt;です。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://copy.com/eMLtOXvITikVThCq&#34; alt=&#34;StackEditor&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;リアルタイムプレビューはもちろん、Dropboxへ保存したり、読み込んだりもできちゃいます。&lt;/p&gt;
+
+&lt;p&gt;Google Driveにも対応しているので、議事録をとったらそのままDriveにアップして共有！なんてこともできちゃいますね！&lt;/p&gt;
+
+&lt;p&gt;Chromeアプリにもなっているので、&lt;br /&gt;
+みんな&lt;a href=&#34;https://chrome.google.com/webstore/detail/stackedit/iiooodelglhkcpgbajoejffhijaclcdg&#34;&gt;インストール&lt;/a&gt;しちゃえばいいよ&lt;/p&gt;
+
+&lt;p&gt;ちなみに&lt;a href=&#34;https://github.com/benweet/stackedit&#34;&gt;ソース&lt;/a&gt;がGitHubで公開されているので、他のサービスと連携したかったら自分で追加できると思います。(たぶん&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>2013年の抱負</title>
+      <link>http://naonya3.me/post/2013/01/17/2013year/</link>
+      <pubDate>Thu, 17 Jan 2013 21:18:00 +0900</pubDate>
+      
+      <guid>http://naonya3.me/post/2013/01/17/2013year/</guid>
+      <description>&lt;p&gt;新年明けましておめでとうございます。&lt;br /&gt;
+せっかく何度目か分からないblogを立ち上げたので、今年の抱負を書いておきます。&lt;/p&gt;
+
+&lt;p&gt;##結婚生活に慣れる&lt;/p&gt;
+
+&lt;p&gt;私事ですが、先月入籍致しました。&lt;/p&gt;
+
+&lt;p&gt;もう６年も付き合い４年も一緒に暮らしていますが、結婚を機にお互いもっと相手を思いやれる行動が出来るようになりたいと思います。&lt;/p&gt;
+
+&lt;p&gt;あと、僕はもっと稼げるようになりたいです。&lt;/p&gt;
+
+&lt;p&gt;早く子供は欲しいと思っていて、子供がなにか好きな事をやりたい時、（甘やかすつもりはありませんが）お金の問題であきらめなきゃいけないなんて、
+本当につまらない事だとおもうので、がっつり稼ぎたいです。&lt;/p&gt;
+
+&lt;p&gt;式は２月２４日を予定しております。Facebook/Twitter等で見かけたら、暖かく見守って頂けたらと幸いです。&lt;/p&gt;
+
+&lt;p&gt;##個人サービスをリリース&lt;/p&gt;
+
+&lt;p&gt;インスタレーションやサイネージ、ツール的なアプリも作るの好きなのですが、
+やっぱり僕は”場”を作りたいと、最近改めて感じるようになりました。&lt;/p&gt;
+
+&lt;p&gt;小学生の頃からwebページを作リ初めて（ホームページって呼んでましたね）何を一番最初にやったかって言うと、
+CGIの掲示板を開設することでした。その後チャットなども開設して、部活の友達やクラスの仲がいい奴と遅くまで話していました。&lt;/p&gt;
+
+&lt;p&gt;たぶんそれがすごく楽しかったから、今でもweb制作続けているのだし、大学に入ってからですがサーバサイドの言語も勉強したのだと思います。
+アフィリエイトが流行りだした時期でそういう下心もあった事は否定しないけど！！&lt;/p&gt;
+
+&lt;p&gt;という事で、本質に戻って今年は人が集まるサービス作りたいです。&lt;/p&gt;
+
+&lt;p&gt;##iOSアプリもリリース&lt;/p&gt;
+
+&lt;p&gt;iPhoneでてすぐデベロッパー登録したにも関わらず、まだ個人で何もリリースしていません。&lt;/p&gt;
+
+&lt;p&gt;このままでは死ねないので、しょぼくていいので何かリリースしたい。&lt;/p&gt;
+
+&lt;p&gt;あわよくば有料で売って&lt;a href=&#34;http://www.apple.com/jp/displays/&#34;&gt;Thunderbolt Display&lt;/a&gt;買える位稼ぎたい。&lt;/p&gt;
+
+&lt;p&gt;これは別にサービスじゃ無くてもいいかな。&lt;/p&gt;
+
+&lt;p&gt;##Rubyを扱えるようになる&lt;/p&gt;
+
+&lt;p&gt;上の&lt;strong&gt;個人サービスをリリース&lt;/strong&gt;に関係するのですが、空き時間でサービスを作る上でスピード感は大切だと思うので、
+なんだか制作スピード上がりそうなRuby on Railsを使う為です。あと日本発の言語を日本のプログラマーが嗜んでなくてどうする。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;あと、モテそうだからです。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;##まとめ&lt;/p&gt;
+
+&lt;p&gt;とりあえず、まとめると&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;ぐだぐだ言ってないで、とっととつくる一年にします。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;仕事では真面目に良いものつくってるので、個人では不完全でしょぼくても良いので、がんがん短いスパンで
+どんどんアウトプットして行きたい所存です！&lt;/p&gt;
+
+&lt;p&gt;2013年、みなさまよろしくお願い致します。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

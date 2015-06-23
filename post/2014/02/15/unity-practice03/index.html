@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="naonya3の個人的な日記">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
+<link rel="stylesheet" href="/css/normalize.css">
+<link rel="stylesheet" href="/css/skeleton.css">
+<link rel="stylesheet" href="/css/custom.css">
+<link rel="alternate" href="/index.xml" type="application/rss+xml" title="naonya3.me">
+<title>Unity入門記録 03 - naonya3.me</title>
+</head>
+<body>
+
+<div class="container">
+
+	<header role="banner">
+		<div class="header-logo">
+			<a href="/"><img src="/img/logo.jpg" width="60" height="60"></a>
+		</div>
+		
+	</header>
+
+
+	<main role="main">
+		<article itemscope itemtype="http://schema.org/BlogPosting">
+			<h1 class="entry-title" itemprop="headline">Unity入門記録 03</h1>
+			<span class="entry-meta"><time itemprop="datePublished" datetime="2014-02-15">February 15, 2014</time></span>
+			<section itemprop="entry-text">
+				
+
+<h2 id="ブロック崩しを仕上げる:d1e27b36d4124851e16452d4ee8fb41a">ブロック崩しを仕上げる</h2>
+
+<p>前回に引き続きブロック崩しを進める。
+今回はゲームクリアと、ゲームオーバーを実装する。</p>
+
+<h2 id="ゲームオーバーの実装:d1e27b36d4124851e16452d4ee8fb41a">ゲームオーバーの実装</h2>
+
+<p>簡単そうなのでこちらから。</p>
+
+<p>これは前回と同じように当たり判定<code>OnCollisionEnter</code>を使い、下のバーとの当たり判定を見ればいい。</p>
+
+<p>下のバーのGameObjectを取得できればほぼ終わり。</p>
+
+<p>GameObjectを取得する方法でとりあえず知っているのは<code>Find</code>を使う方法だけなので、Hierarchyパネルで下のバーに一意な名前をつけて取得しやすくする。</p>
+
+<p><code>BottomBar</code>という名前をつけた。</p>
+
+<p><img src="https://copy.com/thumbs_public/pd7IZyLqN9dK/BottomBar.png?revision=45&amp;size=512" alt="BottomBar" />
+</p>
+
+<p>ゲームオーバー画面は後で作るとして、ひとまず「ボールを消す」ということでゲームオーバーを表現した。</p>
+
+<p>コードはこんな感じで、BallController内に実装した。</p>
+
+<pre><code>function OnCollisionEnter(col:Collision) {
+    var blocks = GameObject.Find(&quot;Blocks&quot;);
+    if (col.transform.IsChildOf(blocks.transform)) {
+    	Destroy(col.gameObject);
+    }
+
+    var bottomBar = GameObject.Find(&quot;BottomBar&quot;);
+    if (col.gameObject == bottomBar) {
+    	Debug.Log(&quot;Game Over&quot;);
+    	Destroy(this.gameObject);
+    }
+}
+</code></pre>
+
+<p>BallControllerにゲームオーバー処理などを書いていくのは、プログラムの規模が大きくなると良くないことが起きるのは容易に想像できるが、今回は気にしないでおく。</p>
+
+<h2 id="ゲームクリアの実装:d1e27b36d4124851e16452d4ee8fb41a">ゲームクリアの実装</h2>
+
+<p>ブロック崩しは、ブロックがなくなったらクリアだ。</p>
+
+<p>すべてのブロックは<code>Blocks</code>の子にしてあるので、<code>Blocks</code>の子が<code>0</code>になったらクリアでいいだろう。</p>
+
+<p>子の数え方がわからないので調べる。</p>
+
+<p>前回の経験上、子関係のものは<code>Transform</code>にありそうなので、ドキュメントの<code>Transform</code>の項を眺めてたらベストなプロパティがあった。</p>
+
+<p><a href="https://docs.unity3d.com/Documentation/ScriptReference/Transform-childCount.html">Transform.childCount</a></p>
+
+<p>これでできそうだ。</p>
+
+<pre><code>function OnCollisionEnter(col:Collision) {
+    var blocks = GameObject.Find(&quot;Blocks&quot;);
+    if (col.transform.IsChildOf(blocks.transform)) {
+    	Destroy(col.gameObject);
+
+    	// Check Count of Balls.
+    	if (blocks.transform.childCount == 0) {
+    		Debug.Log(&quot;Clear!!&quot;);
+    		Destroy(this.gameObject);
+    	}
+    }
+
+    var bottomBar = GameObject.Find(&quot;BottomBar&quot;);
+    if (col.gameObject == bottomBar) {
+    	Debug.Log(&quot;Game Over&quot;);
+    	Destroy(this.gameObject);
+    }
+}
+</code></pre>
+
+<p>ブロックとの当たり判定の中で残りのブロック数をチェックして<code>0</code>ならクリアだ。</p>
+
+<p>先ほどと同様に、ボールを消すことでクリアとした。</p>
+
+<p><strong>だが、これではダメだった。</strong></p>
+
+<p><code>Destroy()</code>の直後はまだ実際にオブジェクトは削除されていないようで、カウントが減らなかった。</p>
+
+<p>ドキュメントを読んでみるとしっかりと書いてあった。</p>
+
+<p><a href="https://docs.unity3d.com/Documentation/ScriptReference/Object.Destroy.html">Object.Destroy</a>
+&gt; Actual object destruction is always delayed until after the current Update loop</p>
+
+<p>ということ毎ループ、ブロックの残りの数を数えることにした。</p>
+
+<p>ブロック崩し位なら対して影響なさそうだが、本当はあまり無駄な処理を毎ループ行うべきではない。</p>
+
+<p>毎ループ処理をしたいときは、<code>Update()</code>の中に処理を書けば良い。</p>
+
+<pre><code>#pragma strict
+
+var speed = 5;
+
+function Start () {
+	rigidbody.AddForce((transform.forward + transform.right) * speed, ForceMode.VelocityChange);
+}
+
+function Update () {
+	var blocks = GameObject.Find(&quot;Blocks&quot;);
+
+	// Check count of remaining blocks.
+	if (blocks.transform.childCount == 0) {
+    		Debug.Log(&quot;Clear!!&quot;);
+    		Destroy(this.gameObject);
+    }
+}
+
+function OnCollisionEnter(col:Collision) {
+    var blocks = GameObject.Find(&quot;Blocks&quot;);
+    if (col.transform.IsChildOf(blocks.transform)) {
+    	Destroy(col.gameObject);
+    }
+
+    var bottomBar = GameObject.Find(&quot;BottomBar&quot;);
+    if (col.gameObject == bottomBar) {
+    	Debug.Log(&quot;Game Over&quot;);
+    	Destroy(this.gameObject);
+    }
+}
+</code></pre>
+
+<h2 id="とりあえず遊べる感じになった:d1e27b36d4124851e16452d4ee8fb41a">とりあえず遊べる感じになった</h2>
+
+<p><a href="/contents/unity/practice03/">Unity WebPlayerが必要です</a></p>
+
+<h2 id="まとめ:d1e27b36d4124851e16452d4ee8fb41a">まとめ</h2>
+
+<p>少しわかってきたので、ドキュメントを眺めるようにしよう。</p>
+
+<p>次回は、シーン遷移をやってみたいので、シーン遷移させてゲームクリアの画面を表示させるようにする。</p>
+
+<p>ソースコードは<a href="https://github.com/naonya3/Unity-Breakout">github</a></p>
+
+<p>tagは<code>practice03</code>です。</p>
+
+			</section>
+		</article>
+	</main>
+
+
+	<footer role="contentinfo">
+		<div class="hr"></div>
+		<div class="footer-link">
+			
+			<a href="https://twitter.com/naonya3" target="_blank">Twitter</a></span>
+			<a href="https://www.facebook.com/naonya3" target="_blank">Facebook</a></span>
+			
+		</div>
+		<div class="copyright">Copyright &copy; naonya3 All rights reserved.</div>
+	</footer>
+
+</div>
+
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-41200352-1', 'auto');
+	ga('send', 'pageview');
+</script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>
