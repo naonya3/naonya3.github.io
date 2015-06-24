@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>技術メモ on naonya3.me</title>
+    <link>http://naonya3.me/categories/%E6%8A%80%E8%A1%93%E3%83%A1%E3%83%A2/</link>
+    <description>Recent content in 技術メモ on naonya3.me</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Wed, 24 Jun 2015 13:05:15 +0900</lastBuildDate>
+    <atom:link href="http://naonya3.me/categories/%E6%8A%80%E8%A1%93%E3%83%A1%E3%83%A2/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Hugoのデプロイ</title>
+      <link>http://naonya3.me/post/2015/06/24/deploy-hugo/</link>
+      <pubDate>Wed, 24 Jun 2015 13:05:15 +0900</pubDate>
+      
+      <guid>http://naonya3.me/post/2015/06/24/deploy-hugo/</guid>
+      <description>&lt;p&gt;HugoはOctopressと違ってデプロイのためのツールは内包されていない。&lt;/p&gt;
+
+&lt;p&gt;ので、自分で考える必要がある。&lt;/p&gt;
+
+&lt;p&gt;作業的には&lt;code&gt;hugo -t [ThemeName]&lt;/code&gt;で生成された&lt;code&gt;public&lt;/code&gt;ディレクトリの内容をアップするだけなので難しくない。&lt;/p&gt;
+
+&lt;p&gt;githab page上で公開するなら&lt;code&gt;public&lt;/code&gt;ディレクトリ以下をpushすればいい。&lt;/p&gt;
+
+&lt;p&gt;ググればデプロイサービスを使う方法なども出てくる。便利なサービスだなぁ。&lt;/p&gt;
+
+&lt;p&gt;楽ちんなのは&lt;code&gt;public&lt;/code&gt;以下をgithub pageのgitリポジトリとしてしまって、&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;hugo -t [themename]
+cd public/
+git add -A
+git commit -am &amp;quot;new post&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;的な事をすればいい。処理をまとめておけば、次から更に楽なのでは。&lt;/p&gt;
+
+&lt;p&gt;あとはソースをまるごとDropBoxにでも突っ込んでおけばいいと思う。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
