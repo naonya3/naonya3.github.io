@@ -6,8 +6,61 @@
     <description>Recent content in Posts on naonya3.me</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Wed, 24 Jun 2015 13:05:15 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 25 Jun 2015 13:30:19 +0900</lastBuildDate>
     <atom:link href="http://naonya3.me/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>AtomエディターでSass&#43;Compassの確認を楽にやりたい</title>
+      <link>http://naonya3.me/post/2015/06/25/atom-compass/</link>
+      <pubDate>Thu, 25 Jun 2015 13:30:19 +0900</pubDate>
+      
+      <guid>http://naonya3.me/post/2015/06/25/atom-compass/</guid>
+      <description>
+
+&lt;p&gt;せっかくブログを更新したので、最近のHTMLの勉強を兼ねてThemeでもいじってみようと思いたった。&lt;/p&gt;
+
+&lt;p&gt;そこで、SassとかCompassとかつかってCSSを書きたい。&lt;/p&gt;
+
+&lt;p&gt;SassとかCompassはコンパイルしてCSSを生成する。なので実際に確認するためには都度コンパイルする必要がある。&lt;/p&gt;
+
+&lt;p&gt;編集して保存したら勝手にコンパイルしておいて欲しい。&lt;/p&gt;
+
+&lt;p&gt;Atomエディターでコレをやる方法が私のググり力では見つけられなかったので、以下のようにした。&lt;/p&gt;
+
+&lt;p&gt;SassとかCompassは事前にインストールしてあるとする。&lt;/p&gt;
+
+&lt;h2 id=&#34;buildプラグインをつかえば簡単:d13f2fb96014e9560a68bebb3c06944f&#34;&gt;buildプラグインをつかえば簡単&lt;/h2&gt;
+
+&lt;p&gt;保存のタイミングで処理を走らせるのにAtomの&lt;code&gt;build&lt;/code&gt;プラグインが便利そうなのでこれを使う。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://atom.io/packages/build&#34;&gt;build&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;プロジェクト直下に&lt;code&gt;build&lt;/code&gt;用の設定ファイルを用意して、そこにCompassをコンパイルするように書いておけばいい。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;.atom-build.json&lt;/code&gt;というファイル名で&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{
+  &amp;quot;name&amp;quot;:&amp;quot;Compile Compass&amp;quot;,
+  &amp;quot;cmd&amp;quot;:&amp;quot;compass&amp;quot;,
+  &amp;quot;args&amp;quot;:[&amp;quot;compile&amp;quot;]
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;あとは&lt;code&gt;build&lt;/code&gt;の設定画面で、保存時に処理を走らせるチェックをonにしておくだけ。&lt;/p&gt;
+
+&lt;h2 id=&#34;注意点:d13f2fb96014e9560a68bebb3c06944f&#34;&gt;注意点&lt;/h2&gt;
+
+&lt;p&gt;一点罠があり、Atomエディターはアイコンをクリックして起動させるとPathが自分の期待通りに通ってない（= Atom上でcompassコマンドが叩けない）ので&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;atom&lt;/code&gt;コマンドから起動する必要があった。そうすれば期待通りにPathが通っている。&lt;/p&gt;
+
+&lt;p&gt;Macユーザーならターミナルを起動して&lt;code&gt;atom&lt;/code&gt;と打ってEnterを押すだけ。&lt;/p&gt;
+
+&lt;p&gt;ほかの環境でどうなってるかはしらん。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://qiita.com/hokaccha/items/69ea69659a56037068a7&#34;&gt;参考:Atomでパスが通らない&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Hugoのデプロイ</title>
