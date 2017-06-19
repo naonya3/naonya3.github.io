@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja-jp">
 <head>
 <meta charset="utf-8">
+<meta name="generator" content="Hugo 0.22.1" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="naonya3の個人的な日記">
-<link href="http://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
 <link rel="stylesheet" href="/css/normalize.css">
 <link rel="stylesheet" href="/css/skeleton.css">
@@ -18,7 +18,7 @@
 
 	<header role="banner">
 		<div class="header-logo">
-			<a href="/"><img src="/img/logo.jpg" width="60" height="60"></a>
+			<a href="/"><img src="/img/logo.jpg" width="60" height="60" alt="naonya3.me"></a>
 		</div>
 		
 	</header>
@@ -31,8 +31,7 @@
 			<section itemprop="entry-text">
 				
 
-<p><img src="https://copy.com/thumbs_public/ZcK4LNj1hEy1/IMG_7214.JPG?revision=35&amp;size=512" alt="IRKit" />
-</p>
+<p><img src="https://copy.com/thumbs_public/ZcK4LNj1hEy1/IMG_7214.JPG?revision=35&amp;size=512" alt="IRKit" /></p>
 
 <p>遠隔操作できる家電リモコン。</p>
 
@@ -49,7 +48,7 @@
 
 <p>ということで、設定して遊んでみました。</p>
 
-<h2 id="irkitの初期設定:60f3c8ea242414aa86ef479c12a61106">IRKitの初期設定</h2>
+<h2 id="irkitの初期設定">IRKitの初期設定</h2>
 
 <p>まずはIRKitをWifiに接続するためにアプリをインストールします。</p>
 
@@ -69,19 +68,17 @@
 <li><strong>モールス信号</strong>でIRKitに無線LANの設定情報を送る</li>
 </ol>
 
-<p><img src="https://copy.com/thumbs_public/Y4j7vxtPuE7o/IMG_7198.JPG?revision=36&amp;size=512" alt="モールス信号で無線の設定情報を送る" />
-</p>
+<p><img src="https://copy.com/thumbs_public/Y4j7vxtPuE7o/IMG_7198.JPG?revision=36&amp;size=512" alt="モールス信号で無線の設定情報を送る" /></p>
 
 <p>右はモールス信号を送っている所です。遊び心があってすごい好きです。</p>
 
 <p>設定が完了すると、赤色だったSTATUSランプが青色になります。</p>
 
-<h2 id="irkitでリモコンの信号を受信する:60f3c8ea242414aa86ef479c12a61106">IRKitでリモコンの信号を受信する</h2>
+<h2 id="irkitでリモコンの信号を受信する">IRKitでリモコンの信号を受信する</h2>
 
 <p><strong>IRKitに向けてリモコンを押すだけ</strong>です。</p>
 
-<p><img src="https://copy.com/thumbs_public/f1ddp3Yyl9Kr/IMG_7210.JPG?revision=37&amp;size=512" alt="押すだけ" />
-</p>
+<p><img src="https://copy.com/thumbs_public/f1ddp3Yyl9Kr/IMG_7210.JPG?revision=37&amp;size=512" alt="押すだけ" /></p>
 
 <p>先ほどインストールした<code>Minimal</code>というアプリはリモコンの信号を学習する機能がついていますので、そちらを使えば受信したデータを簡易的に管理することができます。</p>
 
@@ -90,9 +87,9 @@
 
 <p><a href="http://getirkit.com/">IRKit公式</a>サイトに書いてある情報のままですが、簡単にその方法を書きます</p>
 
-<h2 id="irkitのapiを叩いてリモコンデータを取得する:60f3c8ea242414aa86ef479c12a61106">IRKitのAPIを叩いてリモコンデータを取得する</h2>
+<h2 id="irkitのapiを叩いてリモコンデータを取得する">IRKitのAPIを叩いてリモコンデータを取得する</h2>
 
-<h3 id="まずはirkitのipアドレスを取得します:60f3c8ea242414aa86ef479c12a61106">まずはIRKitのIPアドレスを取得します</h3>
+<h3 id="まずはirkitのipアドレスを取得します">まずはIRKitのIPアドレスを取得します</h3>
 
 <pre><code>$ dns-sd -B _irkit._tcp
 </code></pre>
@@ -125,7 +122,7 @@ Timestamp     A/R Flags if Hostname                  Address                    
 
 <p><code>Address</code>が分かりました。</p>
 
-<h3 id="リモコンのデータを見る:60f3c8ea242414aa86ef479c12a61106">リモコンのデータを見る</h3>
+<h3 id="リモコンのデータを見る">リモコンのデータを見る</h3>
 
 <p>IRKitが受信した直近のリモコンから送信された赤外線データを見るには<code>messages</code>APIをつかいます。</p>
 
@@ -143,7 +140,7 @@ STATUSランプが点滅すればOKです。</p>
 
 <p>ちなみのこのデータはテレビのボリュームアップ。</p>
 
-<h3 id="irkitからデータを送信する:60f3c8ea242414aa86ef479c12a61106">IRKitからデータを送信する</h3>
+<h3 id="irkitからデータを送信する">IRKitからデータを送信する</h3>
 
 <p>この受信データJSONを<code>messages</code>APIにPOSTすることで、同じ信号をIRKitから送信することができます。</p>
 
@@ -158,7 +155,7 @@ Content-Type: text/plain
 
 <p><strong>楽しいｗ</strong></p>
 
-<h2 id="まとめ:60f3c8ea242414aa86ef479c12a61106">まとめ</h2>
+<h2 id="まとめ">まとめ</h2>
 
 <p>Curlから家電操作するの楽しぃぃぃ！</p>
 
@@ -178,8 +175,7 @@ Content-Type: text/plain
 
 <p>ちなみにIRKitは簡単に蓋が開けられて、中はArduinoなので私はここに温度センサをつけて、ハイテクアクアリウムを構築する予定です。</p>
 
-<p><img src="https://copy.com/thumbs_public/wUTLjtZZMyVp/IMG_7205.JPG?revision=38&amp;size=512" alt="分解した" />
-</p>
+<p><img src="https://copy.com/thumbs_public/wUTLjtZZMyVp/IMG_7205.JPG?revision=38&amp;size=512" alt="分解した" /></p>
 
 			</section>
 		</article>
@@ -190,8 +186,9 @@ Content-Type: text/plain
 		<div class="hr"></div>
 		<div class="footer-link">
 			
-			<a href="https://twitter.com/naonya3" target="_blank">Twitter</a></span>
-			<a href="https://www.facebook.com/naonya3" target="_blank">Facebook</a></span>
+			<a href="https://twitter.com/naonya3" target="_blank">Twitter</a>
+			<a href="https://www.facebook.com/naonya3" target="_blank">Facebook</a>
+			
 			
 		</div>
 		<div class="copyright">Copyright &copy; naonya3 All rights reserved.</div>
@@ -199,14 +196,7 @@ Content-Type: text/plain
 
 </div>
 
-<script>
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-41200352-1', 'auto');
-	ga('send', 'pageview');
-</script>
+
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>

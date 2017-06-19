@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja-jp">
 <head>
 <meta charset="utf-8">
+<meta name="generator" content="Hugo 0.22.1" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="naonya3の個人的な日記">
-<link href="http://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
 <link rel="stylesheet" href="/css/normalize.css">
 <link rel="stylesheet" href="/css/skeleton.css">
@@ -18,7 +18,7 @@
 
 	<header role="banner">
 		<div class="header-logo">
-			<a href="/"><img src="/img/logo.jpg" width="60" height="60"></a>
+			<a href="/"><img src="/img/logo.jpg" width="60" height="60" alt="naonya3.me"></a>
 		</div>
 		
 	</header>
@@ -31,13 +31,13 @@
 			<section itemprop="entry-text">
 				
 
-<h2 id="ブロック崩しの続き:1a54d26856387034c94aa45a108eaaaf">ブロック崩しの続き</h2>
+<h2 id="ブロック崩しの続き">ブロック崩しの続き</h2>
 
 <p>前回から引き続きチュートリアルのブロック崩しを作っていきます。</p>
 
 <p>ただ、本家のチュートリアルの続きが無いので自分で考えながらです。（日本語しか見てないので、英語版は用意されているのかもしれませんが）</p>
 
-<h2 id="まずはブロックの用意:1a54d26856387034c94aa45a108eaaaf">まずはブロックの用意</h2>
+<h2 id="まずはブロックの用意">まずはブロックの用意</h2>
 
 <p>前回の成果物に圧倒的に足りないもの。</p>
 
@@ -45,8 +45,7 @@
 
 <p>壁を作ったのと同様にしていけば問題ないでしょう。</p>
 
-<p><img src="https://copy.com/thumbs_public/YQo29juAMwsk/block.png?revision=43&amp;size=512" alt="Blocks" />
-</p>
+<p><img src="https://copy.com/thumbs_public/YQo29juAMwsk/block.png?revision=43&amp;size=512" alt="Blocks" /></p>
 
 <p>こんな感じで配置していきます。</p>
 
@@ -62,7 +61,7 @@
 
 <p>Unityにおいての当たり判定の取り方を調べれは良さそうです。</p>
 
-<h2 id="オブジェクト同士の当たり判定を取る:1a54d26856387034c94aa45a108eaaaf">オブジェクト同士の当たり判定を取る</h2>
+<h2 id="オブジェクト同士の当たり判定を取る">オブジェクト同士の当たり判定を取る</h2>
 
 <p>調べてみると、オブジェクト同士が衝突した際に、<code>Rigidbody</code>(前回ボールに設定した)の<code>OnCollisionEnter(col : Collision)</code>メソッドが呼ばれるらしいです。</p>
 
@@ -110,7 +109,7 @@ function OnCollisionEnter(col:Collision) {
 
 <p>このままだと無差別殺人なので、当たった対象がブロックかどうか調べる必要がありそうです。</p>
 
-<h2 id="オブジェクトを見分ける:1a54d26856387034c94aa45a108eaaaf">オブジェクトを見分ける</h2>
+<h2 id="オブジェクトを見分ける">オブジェクトを見分ける</h2>
 
 <p>どうやってオブジェクトを見分けるか考えてみました。</p>
 
@@ -180,8 +179,7 @@ function OnCollisionEnter(col:Collision) {
 
 <p>これをビルドすると以下のようになります。</p>
 
-<p><img src="https://copy.com/thumbs_public/huNJgmpm8jYe/game.png?revision=44&amp;size=512" alt="game" />
-</p>
+<p><img src="https://copy.com/thumbs_public/huNJgmpm8jYe/game.png?revision=44&amp;size=512" alt="game" /></p>
 
 <p><a href="/contents/unity/practice02/02.html">Unity WebPlayerが必要です。</a></p>
 
@@ -191,17 +189,17 @@ function OnCollisionEnter(col:Collision) {
 
 <p><code>practice02</code>タグを見て下さい。</p>
 
-<h2 id="ゲームオーバーはどうする:1a54d26856387034c94aa45a108eaaaf">ゲームオーバーはどうする？</h2>
+<h2 id="ゲームオーバーはどうする">ゲームオーバーはどうする？</h2>
 
 <p>同じように、枠の下側のCubeとの当たり判定を見ればいいでしょう。</p>
 
-<h2 id="ゲームクリアはどうする:1a54d26856387034c94aa45a108eaaaf">ゲームクリアはどうする？</h2>
+<h2 id="ゲームクリアはどうする">ゲームクリアはどうする？</h2>
 
 <p><code>Blocks</code>の子が<code>0</code>になったらゲームクリアにできそう。</p>
 
 <p>そのあと、ボールを止めたりシーンを遷移させたりすると完成かも。</p>
 
-<h2 id="今回のまとめと所感:1a54d26856387034c94aa45a108eaaaf">今回のまとめと所感</h2>
+<h2 id="今回のまとめと所感">今回のまとめと所感</h2>
 
 <ul>
 <li>GameObjectの取得は重要そうだ</li>
@@ -219,8 +217,9 @@ function OnCollisionEnter(col:Collision) {
 		<div class="hr"></div>
 		<div class="footer-link">
 			
-			<a href="https://twitter.com/naonya3" target="_blank">Twitter</a></span>
-			<a href="https://www.facebook.com/naonya3" target="_blank">Facebook</a></span>
+			<a href="https://twitter.com/naonya3" target="_blank">Twitter</a>
+			<a href="https://www.facebook.com/naonya3" target="_blank">Facebook</a>
+			
 			
 		</div>
 		<div class="copyright">Copyright &copy; naonya3 All rights reserved.</div>
@@ -228,14 +227,7 @@ function OnCollisionEnter(col:Collision) {
 
 </div>
 
-<script>
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-41200352-1', 'auto');
-	ga('send', 'pageview');
-</script>
+
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
