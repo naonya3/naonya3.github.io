@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://naonya3.me/post/2017/06/29/cli/</loc>
+    <lastmod>2017-06-29T20:05:07+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://naonya3.me/post/2017/6/19/</loc>
     <lastmod>2017-06-19T18:26:51+09:00</lastmod>
   </url>
@@ -73,19 +78,26 @@
   </url>
   
   <url>
+    <loc>http://naonya3.me/tags/golang/</loc>
+    <lastmod>2017-06-29T20:05:07+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://naonya3.me/post/</loc>
-    <lastmod>2017-06-19T18:26:51+09:00</lastmod>
+    <lastmod>2017-06-29T20:05:07+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://naonya3.me/tags/</loc>
+    <lastmod>2017-06-29T20:05:07+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://naonya3.me/</loc>
-    <lastmod>2017-06-19T18:26:51+09:00</lastmod>
+    <lastmod>2017-06-29T20:05:07+09:00</lastmod>
     <priority>0</priority>
   </url>
   

@@ -7,9 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>naonya3 All rights reserved.</copyright>
+    <lastBuildDate>Thu, 29 Jun 2017 20:05:07 +0900</lastBuildDate>
     
 	<atom:link href="http://naonya3.me/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Golang</title>
+      <link>http://naonya3.me/tags/golang/</link>
+      <pubDate>Thu, 29 Jun 2017 20:05:07 +0900</pubDate>
+      
+      <guid>http://naonya3.me/tags/golang/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

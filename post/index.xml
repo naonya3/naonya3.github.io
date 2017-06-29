@@ -7,10 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>naonya3 All rights reserved.</copyright>
-    <lastBuildDate>Mon, 19 Jun 2017 18:26:51 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 29 Jun 2017 20:05:07 +0900</lastBuildDate>
     
 	<atom:link href="http://naonya3.me/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>日記書きやすくするためにCLIツール作った</title>
+      <link>http://naonya3.me/post/2017/06/29/cli/</link>
+      <pubDate>Thu, 29 Jun 2017 20:05:07 +0900</pubDate>
+      
+      <guid>http://naonya3.me/post/2017/06/29/cli/</guid>
+      <description>文章を書くという機能のレベルが小学生で止まってしまっている
+僕は知的な文章を書いてブイブイ言わせたいフレンズなのでとにかく練習をするぞわーい
+そのためには書くための心理的ハードルを下げる必要があった
+このblogはhugoで作っている
+hugo自体は難しくないのだけど$ hugo new post/自分で決めたフォーマット/ファイル名.mdみたいなことをやるのが僕には辛かった
+ファイル名を渡すだけでよしなにしてくれるツールが必要だった
+だからgoでつくった
+ついでにdeploy作業もやってくれるようにした
+もうぼくは知的な文章を書くためのスタートラインに立っていると言ってしまえるだろうし
+なんなら知的な文章製造人間だと呼んでしまっても過言ではないのだろうか？</description>
+    </item>
     
     <item>
       <title>hello</title>
