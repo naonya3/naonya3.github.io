@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>思い出 on naonya3.me</title>
+    <link>http://naonya3.me/tags/%E6%80%9D%E3%81%84%E5%87%BA/</link>
+    <description>Recent content in 思い出 on naonya3.me</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>naonya3 All rights reserved.</copyright>
+    <lastBuildDate>Fri, 30 Jun 2017 23:11:42 +0900</lastBuildDate>
+    
+	<atom:link href="http://naonya3.me/tags/%E6%80%9D%E3%81%84%E5%87%BA/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>見てくれこの色ぉ</title>
+      <link>http://naonya3.me/post/2017/06/30/lunch/</link>
+      <pubDate>Fri, 30 Jun 2017 23:11:42 +0900</pubDate>
+      
+      <guid>http://naonya3.me/post/2017/06/30/lunch/</guid>
+      <description>どうしてこんな色に、、、 https://t.co/JZc38iqqKC
+&amp;mdash; にょす君 (@naonya3) 2017年6日30日 
+tweet をブログに貼るのは便利だ
+あえてだあえて言うならばだ
+お弁当の隅を埋め
+そして彩りを演出してくれる
+そうブロッコリーと同じだ
+ブロッコリーはすごい でも僕には twitter を表示して該当の tweet を選択し
+そしてツイートをサイトに埋め込むボタンを押すことは難しすぎた
+だからgoでつくった
+twpn という
+tweet をポンポンできるから twpn という知的な名前を与えた
+$ twpn latest --format script naonya3
+これで最新の数 tweet から任意のものをサイトに埋め込める形でクリップボードにコピーできる
+なおコードをきれいにする余裕はなかったので探しても見つからないぞ</description>
+    </item>
+    
+  </channel>
+</rss>
