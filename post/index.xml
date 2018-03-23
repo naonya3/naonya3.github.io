@@ -7,10 +7,34 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>naonya3 All rights reserved.</copyright>
-    <lastBuildDate>Tue, 04 Jul 2017 13:59:17 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 23 Mar 2018 16:54:46 +0900</lastBuildDate>
     
 	<atom:link href="http://naonya3.me/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>AWS Cloud9から書く</title>
+      <link>http://naonya3.me/post/2018/03/23/cloud9/</link>
+      <pubDate>Fri, 23 Mar 2018 16:54:46 +0900</pubDate>
+      
+      <guid>http://naonya3.me/post/2018/03/23/cloud9/</guid>
+      <description>このブログはhugoで書いている。
+つまり記事を書いて公開するには、ブログの構築とデプロイ作業が必要になる。
+ PCを立ち上げて エディターを立ち上げて 記事を書いて コマンドを打って ブログをビルドして デプロイする  めんどくさい。
+ブログサービスを利用すればこんな思いをしなくても済むのに。
+ブラウザですべて完結できたら最高 それをブログサービスと呼ぶ
+なんならスマホで書きたいんだ俺は。
+そこで余ってるSakuraVPSをAWS Cloud9から使えるようにして、 そこから記事を書けるようにしてみた。
+Cloud9は雑に説明するとブラウザ上で完結する開発環境。
+これを使えばブログ記事程度ならスマホで書けるのではないかと目論んだ。
+Cloud9はサーバにEC2を使う方法とsshで任意のサーバに接続して使う方法の二通りがある。今回やったのは後者。
+ガイドに従ってポチポチやると環境ができあがる。
+起動してみると、こんな感じのよくあるIDEな画面が現れてブラウザ上でそこそこ開発ができるようになる。
+(TODO: スクショをいれよう)
+めっちゃべんり〜〜〜〜
+早速iPhoneで記事を書くためにアクセスしてみると、スマホからは操作が難しすぎる！！
+お し ま い。</description>
+    </item>
     
     <item>
       <title>プロテインとモチベーション</title>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="Hugo 0.38-DEV" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="//fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
+<link rel="stylesheet" href="/css/normalize.css">
+<link rel="stylesheet" href="/css/skeleton.css">
+<link rel="stylesheet" href="/css/custom.css">
+<link rel="alternate" href="/index.xml" type="application/rss+xml" title="naonya3.me">
+<title>AWS Cloud9から書く - naonya3.me</title>
+</head>
+<body>
+
+<div class="container">
+
+	<header role="banner">
+		<div class="header-logo">
+			<a href="/"><img src="/img/logo.jpg" width="60" height="60" alt="naonya3.me"></a>
+		</div>
+		
+	</header>
+
+
+	<main role="main">
+		<article itemscope itemtype="http://schema.org/BlogPosting">
+			<h1 class="entry-title" itemprop="headline">AWS Cloud9から書く</h1>
+			<span class="entry-meta"><time itemprop="datePublished" datetime="2018-03-23">March 23, 2018</time></span>
+			<section itemprop="entry-text">
+				
+
+<p>このブログは<code>hugo</code>で書いている。</p>
+
+<p>つまり記事を書いて公開するには、ブログの構築とデプロイ作業が必要になる。</p>
+
+<ul>
+<li>PCを立ち上げて</li>
+<li>エディターを立ち上げて</li>
+<li>記事を書いて</li>
+<li>コマンドを打って</li>
+<li>ブログをビルドして</li>
+<li>デプロイする</li>
+</ul>
+
+<p>めんどくさい。</p>
+
+<p><del>ブログサービスを利用すればこんな思いをしなくても済むのに。</del></p>
+
+<hr />
+
+<h1 id="ブラウザですべて完結できたら最高">ブラウザですべて完結できたら最高</h1>
+
+<p><del>それをブログサービスと呼ぶ</del></p>
+
+<p>なんならスマホで書きたいんだ俺は。</p>
+
+<p>そこで余ってるSakuraVPSを<a href="https://aws.amazon.com/jp/cloud9/">AWS Cloud9</a>から使えるようにして、
+そこから記事を書けるようにしてみた。</p>
+
+<p>Cloud9は雑に説明するとブラウザ上で完結する開発環境。</p>
+
+<p>これを使えばブログ記事程度ならスマホで書けるのではないかと目論んだ。</p>
+
+<p>Cloud9はサーバにEC2を使う方法とsshで任意のサーバに接続して使う方法の二通りがある。今回やったのは後者。</p>
+
+<p>ガイドに従ってポチポチやると環境ができあがる。</p>
+
+<p>起動してみると、こんな感じのよくあるIDEな画面が現れてブラウザ上でそこそこ開発ができるようになる。</p>
+
+<p>(TODO: スクショをいれよう)</p>
+
+<p>めっちゃべんり〜〜〜〜</p>
+
+<p>早速iPhoneで記事を書くためにアクセスしてみると、スマホからは操作が難しすぎる！！</p>
+
+<p>お し ま い。</p>
+
+			</section>
+		</article>
+	</main>
+
+
+	<footer role="contentinfo">
+		<div class="hr"></div>
+		<div class="footer-link">
+			
+			<a href="https://twitter.com/naonya3" target="_blank">Twitter</a>
+			<a href="https://www.facebook.com/naonya3" target="_blank">Facebook</a>
+			
+			
+		</div>
+		<div class="copyright">Copyright &copy; naonya3 All rights reserved.</div>
+	</footer>
+
+</div>
+
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-41200352-1', 'auto');
+	ga('send', 'pageview');
+</script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>
